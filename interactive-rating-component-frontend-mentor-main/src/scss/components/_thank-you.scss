@@ -1,0 +1,28 @@
+@use "../abstract/" as *;
+
+.thank-you {
+  flex-direction: column;
+  gap: rem(25);
+  align-items: center;
+  justify-content: center;
+  padding-block-start: rem(25);
+}
+
+.review__svg {
+  inline-size: 50%;
+}
+
+.review__option {
+  padding: rem(10) rem(16) rem(6) rem(16);
+  border-radius: rem(25);
+
+  color: var(--primary-color);
+
+  background-color: var(--dark-blue);
+}
+
+.thank-you__paragraph {
+  inline-size: 100%;
+
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+@use "../abstract/" as *;
+@use "sass:string";
+@use "sass:map";
+/* utility  classes */
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .text-#{$color}-#{$shade} {
+      color: var(--clr-#{$color}-#{$shade});
+    }
+    .bg-#{$color}-#{$shade} {
+      background-color: var(--clr-#{$color}-#{$shade});
+    }
+  }
+}

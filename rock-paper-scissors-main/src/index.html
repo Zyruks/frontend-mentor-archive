@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors Game</title>
+    <meta
+      name="title"
+      content="Rock, Paper, Scissors Challenge from Frontend Mentor"
+    />
+
+    <meta name="keywords" content="frontend mentor" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+
+    <!-- favicon responsive -->
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="./assets/favicons/favicon-48x48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="228x228"
+      href="./assets/favicons/coast-228x228.png"
+    />
+
+    <!-- favicon responsive end-->
+
+    <!-- google stuff -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google stuff end-->
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- styles end -->
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header flex-group">
+        <p class="fs-500 lh-100 txt-neutral-100 uppercase fw-700">
+          rock <br />
+          paper <br />
+          scissors
+        </p>
+        <div class="score-container | bg-neutral-100">
+          <p>score</p>
+          <span class="old-score | fs-700 txt-neutral-600"></span>
+          <h2 id="score" class="score fs-700 txt-neutral-600">0</h2>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <img
+            class="triangle js-triangle"
+            src="./assets/svg/bg-triangle.svg"
+            alt=""
+          />
+          <div class="tokens-container js-tokens-container">
+            <div class="wrapper spot spot-one">
+              <button class="tokens">random Text</button>
+
+              <h3>You picked</h3>
+            </div>
+
+            <div class="wrapper paper">
+              <button id="paper" class="tokens">
+                <img
+                  src="./assets/svg/icon-paper.svg"
+                  alt="hand shape like a paper"
+                />
+              </button>
+
+              <h3>You picked</h3>
+            </div>
+            <div class="wrapper scissors">
+              <button id="scissors" class="tokens">
+                <img
+                  src="./assets/svg/icon-scissors.svg"
+                  alt="hand shape like a scissor"
+                />
+              </button>
+              <h3>You picked</h3>
+            </div>
+
+            <div class="wrapper rock">
+              <button id="rock" class="tokens">
+                <img
+                  src="./assets/svg/icon-rock.svg"
+                  alt="hand shape like a rock"
+                />
+              </button>
+              <h3>You picked</h3>
+            </div>
+            <div class="wrapper spot spot-two">
+              <button class="tokens">random Text</button>
+
+              <h3>The House picked</h3>
+            </div>
+          </div>
+          <div class="results js-results">
+            <h1 class="fluid-500">winner Text</h1>
+            <button class="js-play-again">play again</button>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <button class="btn js-rules-btn">rules</button>
+          <button class="btn js-reset-score">Reset score</button>
+
+          <div class="modal js-modal">
+            <h2 class="fs-700 txt-primary-400">RULES</h2>
+            <img
+              class="instructions"
+              src="./assets/svg/image-rules.svg"
+              alt="Rules for the game "
+            />
+
+            <svg class="close-modal js-close-modal" width="20" height="20">
+              <path
+                fill="#000000"
+                fill-rule="evenodd"
+                d="M16.97 0l2.122 2.121-7.425 7.425 7.425 7.425-2.121 2.12-7.425-7.424-7.425 7.425L0 16.97l7.425-7.425L0 2.121 2.121 0l7.425 7.425L16.971 0z"
+                opacity=".25"
+              />
+            </svg>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

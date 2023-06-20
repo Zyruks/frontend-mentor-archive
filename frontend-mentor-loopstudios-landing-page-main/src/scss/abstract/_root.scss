@@ -1,0 +1,70 @@
+@use "colors" as *;
+@use "fonts" as *;
+@use "spaces" as *;
+@use "breakpoints" as *;
+
+:root {
+  /* colors */
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  /* fills */
+  @each $fill, $shades in $colors {
+    @each $shade, $value in $shades {
+      --fill-#{$fill}-#{$shade}: #{$value};
+    }
+  }
+
+  /* font family */
+  @each $font-family, $value in $font-families {
+    --ff-#{$font-family}: #{$value}, sans-serif;
+  }
+
+  --ff-body: var(--ff-primary);
+  --ff-headings: var(--ff-secondary);
+
+  /* font sizes */
+  @each $size, $value in $font-sizes {
+    --fs-#{$size}: #{$value};
+  }
+
+  /* font weight */
+  @each $weight, $value in $font-weights {
+    --fw-#{$weight}: #{$value};
+  }
+
+  /* sizes */
+  @each $size, $value in $sizes {
+    --size-#{$size}: #{$value};
+  }
+
+  /* line heights*/
+  @each $height, $value in $line-heights {
+    --lh-#{$height}: #{$value};
+  }
+
+  --fs-body: var(--fs-425);
+  --fs-primary-heading: var(--fs-550);
+  --fs-secondary-heading: var(--fs-500);
+  --fs-nav: var(--fs-500);
+  --fs-button: var(--fs-300);
+}
+
+@include breakpoint(medium) {
+  :root {
+    --fs-secondary-heading: var(--fs-500);
+    --fs-body: var(--fs-300);
+  }
+}
+
+@include breakpoint(large) {
+  :root {
+    --fs-body: var(--fs-400);
+    --fs-primary-heading: var(--fs-750);
+    --fs-secondary-heading: var(--fs-550);
+    --fs-nav: var(--fs-400);
+  }
+}

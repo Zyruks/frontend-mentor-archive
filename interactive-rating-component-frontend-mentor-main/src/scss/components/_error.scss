@@ -1,0 +1,12 @@
+@use "../abstract/" as *;
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.no-selected {
+  display: none;
+}

@@ -1,0 +1,221 @@
+@use "../abstract" as *;
+
+body {
+  font-weight: 400;
+
+  /* Extend `.$font` in abstract/_fonts.scss */
+  font-family: $primary-font;
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0;
+
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1,
+h2,
+p,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h4 {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* ******************* *\
+ ? #header typography
+\* ******************* */
+.nav__pages {
+  color: var(--grayish-blue);
+  font-size: rem(24);
+
+  transition: color 400ms ease-in-out;
+
+  &:hover {
+    color: var(--very-dark-grayish-blue);
+  }
+  @include breakpoint(large) {
+    color: var(--white);
+    font-size: clamp(rem(18), 2vw, rem(20));
+
+    &:hover {
+      color: var(--grayish-blue);
+    }
+  }
+}
+
+.nav__pages--active {
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 900;
+  font-size: rem(18);
+  font-family: $secondary-font;
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    color: hsl(0deg, 0%, 0%);
+    font-size: clamp(rem(12), 2vw, rem(16));
+  }
+}
+
+/* ******************* *\
+ ? #header typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #hero typography end
+\* ******************* */
+
+.hero__title {
+  color: var(--white);
+  font-weight: 900;
+  font-size: clamp(rem(24), 10vw, rem(50));
+  font-family: Fraunces, serif;
+  letter-spacing: rem(15);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ******************* *\
+ ? #hero typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #main-content typography end
+\* ******************* */
+.headings-h2 {
+  color: var(--very-dark-blue);
+  font-weight: 900;
+  font-size: clamp(rem(28), 3vw, rem(42));
+  font-family: $secondary-font;
+  text-align: center;
+  @include breakpoint(large) {
+    text-align: start;
+    inline-size: 85%;
+  }
+}
+
+.descriptions {
+  color: var(--dark-grayish-blue);
+  font-size: rem(16);
+  line-height: 1.6;
+  text-align: center;
+  @include breakpoint(large) {
+    font-size: clamp(rem(14), 1.8vw, rem(18));
+    line-height: 1.6;
+    text-align: start;
+  }
+}
+
+.main-content__links {
+  color: hsl(0deg, 0%, 0%);
+  font-size: rem(16);
+  font-family: $secondary-font;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include breakpoint(large) {
+    font-size: clamp(rem(16), 1.8vw, rem(20));
+  }
+}
+
+.main-content__divisions-combo {
+  & .headings-h2 {
+    font-size: clamp(rem(24), 3vw, rem(28));
+  }
+
+  & .headings-h2,
+  & .descriptions {
+    color: var(--graphic-text);
+  }
+
+  @include breakpoint(large) {
+    & .headings-h2 {
+      text-align: center;
+    }
+
+    & .descriptions {
+      text-align: center;
+    }
+  }
+}
+
+/* ******************* *\
+ ? #main-content typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #testimonials typography end
+\* ******************* */
+.testimonials-section .headings-h2 {
+  color: var(--grayish-blue);
+  font-size: rem(16);
+  letter-spacing: rem(5);
+  text-transform: uppercase;
+  @include breakpoint(large) {
+    font-size: rem(20);
+  }
+}
+
+.testimonials .descriptions {
+  line-height: 1.7;
+  @include breakpoint(large) {
+    font-size: clamp(rem(16), 1.5vw, rem(18));
+    text-align: center;
+  }
+}
+
+.headings-h3 {
+  font-size: clamp(rem(16), 2vw, rem(18));
+  font-family: $secondary-font;
+}
+
+.testimonials__title {
+  color: var(--grayish-blue);
+  font-size: clamp(rem(12), 2vw, rem(14));
+}
+
+/* ******************* *\
+ ? #testimonials typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #footer typography end
+\* ******************* */
+
+.footer-nav a {
+  color: var(--footer);
+  font-size: rem(20);
+
+  transition: color 300ms ease-in-out;
+
+  &:hover {
+    color: hsl(0deg, 0%, 100%);
+  }
+}
+
+.attribution {
+  color: var(--footer);
+  text-align: center;
+
+  a {
+    &:hover {
+      color: hsl(0deg, 0%, 100%);
+    }
+  }
+}
+
+/* ******************* *\
+ ? #footer typography end
+\* ******************* */

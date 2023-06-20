@@ -1,0 +1,23 @@
+@use "../abstract" as *;
+
+.burger-menu {
+  inline-size: rem(50);
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  padding: 0;
+
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+
+.line {
+  display: block;
+  border-radius: var(--corner-radius-base);
+
+  background-color: var(--clr-neutral-800);
+  inline-size: 100%;
+  block-size: rem(2);
+}

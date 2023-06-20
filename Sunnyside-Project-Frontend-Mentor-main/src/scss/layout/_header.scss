@@ -1,0 +1,99 @@
+@use "../abstract/" as *;
+
+.header {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-inline-size: rem(1440);
+  inset-inline: 0;
+  inset-block-start: 0;
+  padding-inline: rem(16);
+
+  @include breakpoint(large) {
+    inset-block-start: rem(30);
+  }
+}
+
+.nav {
+  position: absolute;
+  inset-inline: rem(60);
+
+  z-index: 2;
+
+  display: none;
+  flex-direction: column;
+  gap: rem(40);
+  align-items: center;
+
+  background-color: var(--white);
+  padding-block: rem(48);
+  inset-block-start: rem(120);
+
+  @include breakpoint(large) {
+    position: relative;
+    padding-block: 0;
+    inset-block-start: 0;
+
+    display: flex;
+    flex-direction: row;
+    gap: rem(10);
+    justify-content: flex-end;
+
+    background-color: rgba(0, 0, 0, 0%);
+    inset-inline: 0;
+  }
+}
+
+.nav__logo {
+  inline-size: rem(200);
+}
+
+.nav__triangle {
+  position: absolute;
+  inset-block-start: rem(-30);
+
+  inset-inline-end: 0;
+  inline-size: rem(40);
+  block-size: rem(40);
+
+  background-color: var(--white);
+
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+
+  @include breakpoint(large) {
+    display: none;
+  }
+}
+
+.nav__pages {
+  padding: rem(12) rem(30);
+  border-radius: rem(30);
+
+  background-color: rgba(255, 255, 255, 0%);
+
+  transition: background-color 300ms ease-in-out;
+  @include breakpoint(large) {
+    &:hover {
+      padding: rem(12) rem(30);
+      border-radius: rem(30);
+
+      color: hsl(0deg, 0%, 100%);
+
+      background-color: rgba(255, 255, 255, 25%);
+    }
+  }
+}
+
+.nav__pages--active {
+  padding: rem(12) rem(30);
+  border-radius: rem(30);
+
+  background-color: var(--yellow);
+
+  @include breakpoint(large) {
+    background-color: var(--white);
+  }
+}

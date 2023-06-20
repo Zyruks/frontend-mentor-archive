@@ -1,0 +1,26 @@
+@use "../abstract/" as *;
+@use "sass:string";
+
+@each $fs, $value in $font-sizes {
+  .fs-#{$fs} {
+    font-size: $value;
+  }
+}
+
+@each $fw, $value in $font-weights {
+  .fw-#{$fw} {
+    font-weight: $value;
+  }
+}
+
+@each $align in $text-align {
+  .text-align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+@each $height, $value in $line-heights {
+  .lh-#{$height} {
+    line-height: $value;
+  }
+}

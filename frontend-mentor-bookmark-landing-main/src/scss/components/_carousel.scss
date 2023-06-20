@@ -1,0 +1,29 @@
+@use "../abstracts/" as *;
+
+.carousel {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+%carousel {
+  display: none;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  place-items: center;
+
+  @include mq(large) {
+    block-size: rem(390);
+  }
+}
+
+.carousel__first-item {
+  @extend %carousel;
+}
+
+.carousel__second-item {
+  @extend %carousel;
+}
+
+.carousel__third-item {
+  @extend %carousel;
+}

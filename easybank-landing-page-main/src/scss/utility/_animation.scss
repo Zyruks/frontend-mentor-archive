@@ -1,0 +1,118 @@
+@use "../abstract/" as *;
+
+/* animations */
+@keyframes rotate-45deg {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(25deg);
+  }
+}
+@keyframes rotate-negative-45deg {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+@keyframes rotate-45deg-back {
+  0% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes rotate-negative-45deg-back {
+  0% {
+    transform: rotate(-25deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes anima-opacity-off {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+@keyframes anima-opacity-on {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes anima-pop-in {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes anima-pop-out {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.anima-opacity-off {
+  animation: anima-opacity-off 200ms ease-in-out forwards;
+}
+
+.anima-opacity-on {
+  animation: anima-opacity-on 200ms ease-in-out forwards;
+}
+
+.anima-rotate-45deg {
+  animation: rotate-45deg 300ms ease-in-out forwards;
+  transform-origin: left top;
+}
+
+.anima-rotate-negative-45deg {
+  animation: rotate-negative-45deg 300ms ease-in-out forwards;
+  transform-origin: left top;
+}
+
+.anima-rotate-45deg-back {
+  animation: rotate-45deg-back 300ms ease-in-out forwards;
+  transform-origin: left top;
+}
+
+.anima-rotate-negative-45deg-back {
+  animation: rotate-negative-45deg-back 300ms ease-in-out forwards;
+  transform-origin: left top;
+}
+
+.anima-pop-up {
+  animation: anima-pop-in 300ms ease-in-out forwards,
+    anima-opacity-on 250ms ease-in-out forwards;
+}
+
+.anima-pop-out {
+  animation: anima-pop-out 300ms ease-in-out forwards,
+    anima-opacity-off 250ms ease-in-out forwards;
+}
+
+/* animations end */

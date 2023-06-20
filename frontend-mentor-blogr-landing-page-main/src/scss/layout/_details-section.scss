@@ -1,0 +1,38 @@
+@use "../abstract/" as *;
+
+/* ******************* *\
+? #details section 
+\* ******************* */
+.details-section .content-info__img {
+  @include breakpoint(large) {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-self: flex-start;
+
+    transform: translateX(rem(-430)) translateY(rem(80));
+  }
+
+  @include breakpoint(x-large) {
+    transform: translateX(rem(-430)) translateY(rem(90));
+  }
+}
+
+.details-section .content-block--first-block {
+  @include breakpoint(large) {
+    grid-row: 1/ 2;
+    grid-column: 2 / -1;
+    align-self: center;
+  }
+}
+
+.details-section .content-block--second-block {
+  @include breakpoint(large) {
+    grid-row: 2/ -1;
+    grid-column: 2 / -1;
+    align-self: flex-start;
+  }
+}
+
+/* ******************* *\
+? #details section end
+\* ******************* */

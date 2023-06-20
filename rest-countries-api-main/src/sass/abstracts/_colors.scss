@@ -1,0 +1,19 @@
+// ? global color tokens
+$_clr-neutral-100: hsl(0deg 0% 100%);
+$_clr-neutral-200: hsl(0deg 0% 98%);
+$_clr-neutral-300: hsl(0deg 0% 90%);
+$_clr-neutral-400: hsl(0deg 0% 52%);
+$_clr-neutral-700: hsl(207deg 26% 17%);
+$_clr-neutral-800: hsl(209deg 23% 22%);
+$_clr-neutral-900: hsl(200deg 15% 8%);
+$colors: (
+  "neutral": (
+    100: $_clr-neutral-100,
+    200: $_clr-neutral-200,
+    300: $_clr-neutral-300,
+    400: $_clr-neutral-400,
+    700: $_clr-neutral-700,
+    800: $_clr-neutral-800,
+    900: $_clr-neutral-900,
+  ),
+);

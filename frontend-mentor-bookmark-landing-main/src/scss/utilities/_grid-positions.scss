@@ -1,0 +1,5 @@
+@use "../abstracts/" as *;
+
+.grid-left {
+  grid-column: 1 / 2;
+}

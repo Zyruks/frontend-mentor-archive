@@ -1,0 +1,59 @@
+@use "../abstracts/" as *;
+
+.select-container {
+  position: relative;
+}
+
+.select {
+  border-color: $selector-border-color;
+  border-radius: $selector-border-radius;
+
+  color: $selector-color;
+
+  font-weight: $selector-font-weight;
+  font-size: $selector-font-size;
+
+  background-color: $selector-background-color;
+  outline-color: $selector-outline-color;
+  box-shadow: $selector-box-shadow;
+  cursor: pointer;
+
+  transition: color 500ms ease-in-out, background-color 500ms ease-in-out;
+
+  appearance: $selector-appearance;
+  padding-inline-start: $selector-padding-inline-start;
+  padding-inline-end: $selector-padding-inline-end;
+  padding-block: $selector-padding-block;
+}
+
+.select-container::after,
+.select-container::before {
+  position: $region-container-position;
+  z-index: $region-container-z-index;
+
+  display: $region-container-display;
+
+  transform: rotate(var(--rotate-select-icon));
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+  transition-property: opacity transform;
+
+  inset-inline-end: $region-container-inset-inline-end;
+  inset-block: $region-container-inset-block;
+  margin-block: $region-container-margin-block;
+  inline-size: $region-container-inline-size;
+  block-size: $region-container-block-size;
+}
+
+.select-container::after {
+  opacity: var(--select-icon-for-dark-mode);
+
+  content: url("../../chevron-down-outline-light.svg");
+}
+
+.select-container::before {
+  opacity: var(--select-icon-for-light-mode);
+
+  content: url("../../chevron-down-outline-dark.svg");
+}

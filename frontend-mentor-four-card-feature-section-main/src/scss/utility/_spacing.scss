@@ -1,0 +1,24 @@
+@use "../abstract/" as *;
+@use "sass:string";
+@use "sass:map";
+
+@each $position, $areas in $positions {
+  @each $area, $value in $areas {
+    @each $size, $value in $sizes {
+      .#{$position}-#{$area}-#{$size} {
+        #{$position}-#{$area}: $value;
+      }
+    }
+  }
+}
+
+.container {
+  position: relative;
+
+  inline-size: 100%;
+}
+
+.dp-flex {
+  display: flex;
+}
+/* utility classes end*/

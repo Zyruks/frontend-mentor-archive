@@ -1,0 +1,55 @@
+@use "../abstract" as *;
+
+/* ******************* *\
+? #burger menu
+\* ******************* */
+.burger {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  /* Extend `.breakpoint()` in abstract/_breakpoint.scss */
+  @include breakpoint(large) {
+    display: none;
+  }
+}
+
+.burger__svg {
+  /* Extend `rem()` in abstract/_function.scss */
+  inline-size: rem(48);
+  block-size: rem(48);
+}
+
+.burger__line {
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  fill: none;
+  stroke: var(--white);
+  stroke-width: 6;
+}
+
+.burger__line1,
+.burger__line2,
+.burger__line3 {
+  stroke-dasharray: 60 207;
+}
+
+.burger--opened .burger__line1,
+.burger--opened .burger__line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+}
+
+.burger--opened .burger__line2 {
+  stroke-dasharray: 1 40;
+  stroke-dashoffset: -30;
+}
+
+/* ******************* *\
+? #burger menu
+\* ******************* */

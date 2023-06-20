@@ -1,0 +1,173 @@
+@use "../abstract" as *;
+@use "sass:map";
+
+:where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+:where(input[type="file"])::file-selector-button {
+  --accent: #{map.get($buttons, "accent")};
+  --text: #{map.get($buttons, "text")};
+  --bg: #{map.get($buttons, "bg")};
+  --input-well: #{map.get($buttons, "input-well")};
+  --padding-inline: #{map.get($buttons, "padding-inline")};
+  --padding-block: #{map.get($buttons, "padding-block")};
+  --border-color: #{map.get($buttons, "border-color")};
+  --highlight-size: #{map.get($buttons, "highlight-size")};
+  --highlight: #{map.get($buttons, "highlight")};
+  --text-shadow: #{map.get($buttons, "text-shadow")};
+  --icon-size: #{map.get($buttons, "icon-size")};
+  --icon-color: var(--accent);
+  --shadow-color: 220 3% 15%;
+  --shadow-1: #{map.get($buttons, "shadow-1")};
+  --shadow-2: #{map.get($buttons, "shadow-2")}, #{map.get($buttons, "shadow-3")};
+  --shadow-depth: #{map.get($buttons, "shadow-depth")};
+  --transition-motion-reduce: ;
+  --transition-motion-ok: opacity var(--duration-300) var(--ease-in-out);
+  --transition: var(--transition-motion-reduce);
+
+  border-radius: #{map.get($buttons, "border-radius")};
+
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+  :where(input[type="file"])::file-selector-button {
+    --transition: var(--transition-motion-ok);
+  }
+}
+
+:where(button, input[type="button"], input[type="submit"], input[type="reset"]),
+:where(input[type="file"])::file-selector-button {
+  display: inline-flex;
+  gap: 1ch;
+  align-items: center;
+  justify-content: center;
+  border: #{map.get($buttons, "border-width")} #{map.get(
+      $buttons,
+      "border-style"
+    )} var(--border-color);
+
+  color: var(--text);
+
+  font-weight: #{map.get($buttons, "font-weight")};
+
+  font-size: #{map.get($buttons, "mobile-font-size") !important};
+
+  @include breakpoint(medium) {
+    font-size: #{map.get($buttons, "font-size") !important};
+  }
+  text-align: center;
+  text-shadow: var(--text-shadow);
+
+  background: var(--bg);
+  box-shadow: var(--shadow-2), var(--shadow-depth),
+    0 0 0 var(--highlight-size) var(--highlight);
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  user-select: none;
+  touch-action: manipulation;
+  padding-block: var(--padding-block);
+  padding-inline: var(--padding-inline);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* icons */
+:where(button, input[type="button"], input[type="submit"], input[type="reset"])
+  > :where(svg, [data-icon]) {
+  flex-shrink: 0;
+
+  filter: drop-shadow(var(--text-shadow));
+
+  fill: none;
+  stroke: var(--icon-color);
+  block-size: var(--icon-size);
+  inline-size: var(--icon-size);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* focus */
+:where(button, input):where(:not(:active)):focus-visible {
+  outline-offset: rem(5);
+}
+
+/* pressing 
+ modify if you want a different hover effect */
+:where(button, input[type="button"], input[type="submit"], input[type="reset"]):where(:not(:active):hover) {
+  opacity: 75%;
+}
+
+/* disabled */
+:where(button, input[type="button"], input[type="submit"], input[type="reset"])[disabled] {
+  --bg: #{map.get($disable-btn, "bg")};
+  --text: #{map.get($disable-btn, "text")};
+
+  box-shadow: var(--shadow-1);
+
+  cursor: not-allowed;
+}
+
+/* adaptive  text */
+:where([type="submit"], form button:not([type], [disabled])) {
+  --text: var(--accent);
+}
+
+/* red reset */
+:where([type="reset"]) {
+  --border-color: #{map.get($reset-btn, "border-color")};
+  --highlight: #{map.get($reset-btn, "highlight")};
+  --text: #{map.get($reset-btn, "text")};
+}
+
+:where([type="reset"]):focus-visible {
+  outline-color: currentcolor;
+}
+
+/* file input */
+:where(input[type="file"]) {
+  inline-size: 100%;
+  max-inline-size: max-content;
+
+  background-color: var(--input-well);
+}
+
+:where(input[type="button"]),
+:where(input[type="file"])::file-selector-button {
+  appearance: none;
+}
+
+:where(input[type="file"])::file-selector-button {
+  margin-inline-end: var(--padding-inline);
+}
+
+/* Custom Button */
+
+:where(button[data-state="emergency"]) {
+  --bg: #{map.get($custom-btn, "bg")};
+  --border-color: #{map.get($custom-btn, "border-color")};
+  --text: #{map.get($custom-btn, "text")};
+  --text-shadow: #{map.get($custom-btn, "text-shadow")};
+  --highlight: #{map.get($custom-btn, "highlight")};
+  --shadow-1: #{map.get($custom-btn, "shadow-1")};
+  --shadow-2: #{map.get($custom-btn, "shadow-2")};
+}
+
+:where([data-place="footer"]) {
+  --padding-inline: #{map.get($footer-btn, "padding-inline")};
+  --padding-block: #{map.get($footer-btn, "padding-block")};
+  font-size: #{map.get($footer-btn, "font-size") !important};
+}
+
+:where([data-state="invisible"]) {
+  --bg: #{map.get($invisible-btn, "bg")};
+  --border-color: #{map.get($invisible-btn, "border-color")};
+  --text: #{map.get($invisible-btn, "text")};
+  --text-shadow: #{map.get($invisible-btn, "text-shadow")};
+  --highlight: #{map.get($invisible-btn, "highlight")};
+  --shadow-1: #{map.get($invisible-btn, "shadow-1")};
+  --shadow-2: #{map.get($invisible-btn, "shadow-2")};
+}

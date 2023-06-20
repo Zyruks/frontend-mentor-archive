@@ -1,0 +1,14 @@
+// !Don't Use SCSS or SASS Variables, use the CSS Variables instead
+
+:root {
+  --white: hsl(0deg, 0%, 100%);
+  --soft-blue: hsl(215deg, 51%, 70%);
+  --cyan: hsl(178deg, 100%, 50%);
+  --main-bg: #0d192b;
+  --card-bg: hsl(216deg, 50%, 16%);
+  --very-dark-blue: hsl(215deg, 32%, 27%);
+}
+
+::backdrop {
+  --backdrop-bg: hsl(217deg, 54%, 11%);
+}

@@ -1,0 +1,52 @@
+@use "../abstract/" as *;
+
+/* Burger Menu */
+@keyframes key-open-mobile-menu {
+  0% {
+    transform: translateY(rem(-30));
+    opacity: 0%;
+  }
+
+  75% {
+    transform: translateY(rem(20));
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+.open-mobile-menu {
+  display: flex;
+
+  animation: key-open-mobile-menu 800ms ease-in-out forwards;
+}
+@keyframes key-close-mobile-menu {
+  0% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateY(rem(-30));
+    opacity: 0%;
+  }
+}
+
+.close-mobile-menu {
+  animation: key-close-mobile-menu 600ms ease-in-out forwards;
+}
+
+/* #hero animation */
+@keyframes key-hero-arrow {
+  0% {
+    transform: translateY(rem(0));
+  }
+
+  100% {
+    transform: translateY(rem(20));
+  }
+}
+
+/* #hero animation end */

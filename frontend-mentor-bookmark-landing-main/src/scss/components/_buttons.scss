@@ -1,0 +1,107 @@
+@use "../abstracts/" as *;
+
+.button {
+  justify-content: center;
+  border: rem(2) solid transparent;
+  border-radius: rem(6);
+
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-300);
+
+  background-color: var(--clr-primary-400);
+
+  box-shadow: rem(0) rem(4) rem(10) rem(-5) rgba(52, 50, 50, 50%);
+  cursor: pointer;
+
+  transition: all 250ms ease-in-out;
+  padding-inline: rem(16);
+  padding-block: rem(12);
+
+  @include mq(large) {
+    font-size: var(--fs-400);
+  }
+
+  &:hover {
+    border-color: var(--clr-primary-400);
+
+    color: var(--clr-primary-400);
+
+    background-color: transparent;
+  }
+}
+
+.button[data-type="inverted"] {
+  color: var(--clr-neutral-900);
+
+  background-color: var(--clr-neutral-100);
+
+  &:hover {
+    border-color: transparent;
+
+    color: var(--clr-neutral-100);
+
+    background-color: var(--clr-neutral-900);
+  }
+}
+
+.button[data-type="cta"] {
+  border: rem(2) solid transparent;
+
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-400);
+
+  background-color: var(--clr-primary-500);
+  padding-inline: rem(20);
+  padding-block: rem(8);
+
+  &:hover {
+    border: rem(2) solid var(--clr-primary-500);
+
+    color: var(--clr-primary-500);
+
+    background-color: var(--clr-neutral-100);
+  }
+}
+
+.button[data-type="primary-nav"] {
+  border: rem(2) solid var(--clr-neutral-100);
+
+  font-size: 1.5rem;
+  letter-spacing: var(--letter-spacing-loose);
+  text-transform: uppercase;
+
+  background: transparent;
+
+  transition: all 300ms ease-in-out;
+  inline-size: 100%;
+  margin-block: rem(8);
+  padding-block: rem(4);
+
+  &:hover {
+    border: rem(2) solid transparent;
+
+    color: var(--clr-neutral-900);
+
+    background-color: var(--clr-neutral-100);
+  }
+
+  @include mq(large) {
+    border: rem(2) solid transparent;
+
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-400);
+
+    background-color: var(--clr-primary-500);
+    padding-inline: rem(20);
+    padding-block: rem(8);
+
+    &:hover {
+      border: rem(2) solid var(--clr-primary-500);
+
+      color: var(--clr-primary-500);
+
+      background-color: var(--clr-neutral-100);
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use "tokens" as *;
+
+:root {
+  /* colors */
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  --gradient-400: linear-gradient(
+    90deg,
+    var(--clr-primary-400) 0%,
+    var(--clr-primary-500) 100%
+  );
+
+  /* font family */
+  @each $font-family, $value in $font-families {
+    --ff-#{$font-family}: #{$value}, serif;
+  }
+
+  /* font sizes */
+  @each $size, $types in $font-sizes {
+    @each $type, $value in $types {
+      @if ($size == "fluid") {
+        --fluid-fs-#{$type}: #{$value};
+      } @else {
+        --fs-#{$type}: #{$value};
+      }
+    }
+  }
+
+  /* font weight */
+  @each $weight, $value in $font-weights {
+    --fw-#{$weight}: #{$value};
+  }
+
+  /* Letter Spacing */
+  @each $space, $value in $letter-spacings {
+    --letter-spacing-#{$space}: #{$value};
+  }
+  /* spaces */
+  @each $space, $value in $spaces {
+    --space-#{$space}: #{$value};
+  }
+
+  /* line heights */
+  @each $height, $value in $line-heights {
+    --lh-#{$height}: #{$value};
+  }
+
+  /* corner radius */
+  @each $size, $value in $corner-radius {
+    --corner-radius-#{$size}: #{$value};
+  }
+
+  /* Shadows */
+  @each $shadow, $value in $drop-shadows {
+    --drop-shadow-#{$shadow}: #{$value};
+  }
+
+  /* animations */
+  @each $animation, $value in $easing {
+    --#{$animation}: #{$value};
+  }
+
+  @each $duration, $value in $durations {
+    --duration-#{$duration}: #{$value};
+  }
+}

@@ -1,0 +1,106 @@
+@use "../abstract/" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  padding: rem(26);
+  max-block-size: rem(580);
+  border-radius: rem(15);
+
+  background-color: var(--card-bg);
+  inline-size: rem(350);
+
+  box-shadow: rem(30) rem(30) rem(57) hsl(216deg, 56%, 7%),
+    rem(-30) rem(-30) rem(57) hsl(216deg, 53%, 15%);
+}
+
+.card-img__wrapper {
+  position: relative;
+
+  border-radius: rem(10);
+  overflow: hidden;
+
+  cursor: pointer;
+
+  animation: key-top-to-bottom 600ms ease-in-out, forwards;
+
+  block-size: rem(300);
+  inline-size: 100%;
+}
+
+.card__img {
+  inline-size: 100%;
+
+  position: absolute;
+  z-index: 2;
+
+  opacity: 100%;
+
+  transition: opacity 400ms ease-in-out;
+
+  &:hover {
+    background-color: var(--cyan);
+    opacity: 50%;
+
+    transition: opacity 400ms ease-in-out;
+  }
+}
+
+.hover {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--cyan);
+  opacity: 0%;
+  inset-block-start: 0;
+
+  transition: opacity 400ms ease-in-out;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.card__img:hover ~ .hover,
+.card__img:hover ~ .view {
+  opacity: 100%;
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.card-text {
+  padding-block-end: rem(18);
+  border-block-end: 1px solid var(--very-dark-blue);
+
+  animation: key-bottom-to-top 600ms ease-in-out, forwards;
+}
+
+.card-text__sub-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-align {
+  display: flex;
+  gap: rem(6);
+  align-items: center;
+}
+
+.card__about {
+  display: flex;
+  gap: rem(16);
+  align-items: center;
+
+  animation: key-left-to-right 600ms ease-in-out, forwards;
+}
+
+.avatar {
+  inline-size: rem(40);
+
+  border: rem(1) solid var(--white);
+  border-radius: 100%;
+}

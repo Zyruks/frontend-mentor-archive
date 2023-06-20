@@ -1,0 +1,98 @@
+@use "../abstract/" as *;
+@use "sass:string";
+
+@each $fs, $value in $font-sizes {
+  .fs-#{$fs} {
+    font-size: $value;
+  }
+}
+
+@each $fw, $value in $font-weights {
+  .fw-#{$fw} {
+    font-weight: $value;
+  }
+}
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+  line-height: var(--lh-300);
+  text-transform: uppercase;
+  font-weight: var(--fw-300);
+}
+
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+  line-height: var(--lh-400);
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-300);
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}
+
+.fs-body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-700);
+  text-align: center;
+  @include breakpoint(medium) {
+    text-align: left;
+  }
+}
+
+.image-text {
+  font-size: var(--fs-500);
+  line-height: var(--lh-300);
+  font-weight: var(--fw-300);
+  text-align: left;
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
+  transition: color 300ms ease-in-out;
+}
+
+.btn {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  font-family: var(--ff-primary);
+  letter-spacing: rem(5);
+
+  transition: color 300ms ease-in-out, background-color 300ms ease-in-out;
+  &:hover {
+    color: var(--clr-neutral-100);
+  }
+}
+
+.hover-state {
+  &::after {
+    position: absolute;
+
+    opacity: 0%;
+
+    transition: opacity 400ms ease-in-out, inline-size 400ms ease-in-out;
+
+    content: "";
+    inset-block-end: rem(-8);
+    inset-inline-start: 0;
+    inline-size: 0%;
+    border-block-end: rem(1) solid var(--clr-neutral-100);
+
+    @include breakpoint(large) {
+      inset-inline-start: 25%;
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::after {
+      inline-size: 70%;
+
+      opacity: 100%;
+
+      @include breakpoint(large) {
+        inline-size: 50%;
+      }
+    }
+  }
+}

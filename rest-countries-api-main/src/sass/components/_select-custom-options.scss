@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.select-custom-options {
+  position: $selector-custom-options-position;
+
+  border-radius: $selector-custom-options-border-radius;
+  overflow: $selector-custom-options-overflow;
+
+  font-weight: $selector-custom-options-font-weight;
+  font-size: $selector-custom-options-font-size;
+
+  background-color: $selector-custom-options-background-color;
+  box-shadow: $selector-custom-options-box-shadow;
+
+  inset-inline: $selector-custom-options-inset-inline;
+  margin-block-start: $selector-custom-options-margin-block-start;
+
+  li {
+    cursor: pointer;
+    padding-block: 0.4rem;
+    padding-inline: 1rem;
+
+    &:first-child {
+      padding-block-start: 1.2rem;
+    }
+
+    &:last-child {
+      padding-block-end: 1.2rem;
+    }
+
+    &:hover {
+      background-color: var(--hover-bg-color);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@use "../abstract/" as *;
+
+@keyframes key-up-to-down {
+  0% {
+    transform: translateY(rem(-30));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(rem(0));
+    opacity: 100%;
+  }
+}
+
+@keyframes key-left-to-right {
+  0% {
+    transform: translateX(rem(-30));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateX(rem(0));
+    opacity: 100%;
+  }
+}
+
+@keyframes car-animation {
+  0% {
+    transform: translateX(rem(0));
+    opacity: 100%;
+  }
+
+  50% {
+    transform: translateX(rem(500));
+  }
+
+  51% {
+    transform: translateX(rem(-300));
+  }
+
+  99% {
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateX(rem(0));
+    opacity: 0%;
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0%;
+  }
+
+  99% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.car-left-to-right {
+  animation: car-animation 1s ease-in-out forwards;
+}

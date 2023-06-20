@@ -1,0 +1,13 @@
+@use "functions" as *;
+
+$breakpoints: (
+  "small": em(481),
+  "medium": em(700),
+  "large": em(1025),
+  "x-large": em(1200),
+);
+$max-breakpoints: (
+  "small": em(480.9999),
+  "medium": em(699.9999),
+  "large": em(1024.9999),
+);

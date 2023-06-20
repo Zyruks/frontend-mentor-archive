@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+
+:root {
+
+  // ? colors
+  @each $color-name, $shade-map in $colors {
+    @each $shade-name, $shade-value in $shade-map {
+      --color-#{$color-name}-#{$shade-name}: #{$shade-value};
+    }
+  }
+
+  // ? font sizes
+  @each $screen-size, $size-map in $font-sizes {
+    @if $screen-size == small {
+      @each $size-name, $size-value in $size-map {
+        --fs-#{$size-name}: #{$size-value};
+      }
+    } @else {
+      @include mq($screen-size) {
+        @each $size-name, $size-value in $size-map {
+          --fs-#{$size-name}: #{$size-value};
+        }
+      }
+    }
+  }
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+
+  transition-property: color, background-color;
+}

@@ -1,0 +1,75 @@
+@use "../abstract/" as *;
+
+.open-dropdown {
+  animation: key-dropdown-open 300ms ease-in-out forwards;
+}
+
+.close-dropdown {
+  animation: key-dropdown-close 300ms ease-in-out forwards;
+}
+
+@keyframes key-dropdown-open {
+  0% {
+    transform: translateY(rem(-10));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes key-dropdown-close {
+  0% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateY(rem(-10));
+    opacity: 0%;
+  }
+}
+
+.dropdown-arrow {
+  transition: transform 300ms ease-in-out;
+}
+
+.nav-open {
+  animation: key-nav-open 400ms ease-in-out forwards;
+  @include breakpoint(large) {
+    animation: none;
+  }
+}
+
+.nav-close {
+  animation: key-nav-close 400ms ease-in-out forwards;
+  @include breakpoint(large) {
+    animation: none;
+  }
+}
+
+@keyframes key-nav-open {
+  0% {
+    transform: translateY(rem(-20));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(rem(0));
+    opacity: 100%;
+  }
+}
+
+@keyframes key-nav-close {
+  0% {
+    transform: translateY(rem(0));
+    opacity: 100%;
+  }
+
+  100% {
+    transform: translateY(rem(-20));
+    opacity: 0%;
+  }
+}

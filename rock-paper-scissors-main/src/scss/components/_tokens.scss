@@ -1,0 +1,121 @@
+@use "../abstracts/" as *;
+
+.wrapper {
+  @include mq(large) {
+    &:is([data-player="user"], [data-player="opponent"]) .tokens {
+      inline-size: rem(350);
+
+      border-width: rem(40);
+
+      img {
+        inline-size: rem(120);
+      }
+    }
+  }
+
+  h3 {
+    display: none;
+
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-400);
+    letter-spacing: var(--letter-spacing-loose);
+    text-align: center;
+    text-transform: uppercase;
+    margin-block-start: rem(24);
+
+    @include mq(large) {
+      font-size: var(--fs-500);
+    }
+  }
+}
+
+.spot {
+  transition: transform 350ms ease-in-out;
+  @include mq(large) {
+    .tokens[data-status="active"] {
+      inline-size: rem(350);
+
+      transition: inline-size 350ms ease-in-out, transform 350ms ease-in-out;
+    }
+  }
+}
+
+.tokens {
+  position: relative;
+
+  border: rem(15) solid var(--border-clr);
+  border-radius: 100%;
+
+  color: transparent;
+
+  background-color: var(--clr-neutral-100);
+  box-shadow: rem(0) rem(6) 0 rem(0) rgba(0, 0, 0, 15%) inset,
+    rem(0) rem(6) 0 rem(0) var(--border-clr-accent);
+  cursor: pointer;
+
+  padding-inline: rem(16);
+
+  inline-size: rem(140);
+  aspect-ratio: 1/1;
+
+  --border-clr: var(--clr-accent-400);
+  --border-clr-accent: var(--clr-accent-500);
+
+  img {
+    margin-inline: auto;
+  }
+
+  @include mq(large) {
+    border: rem(20) solid var(--border-clr);
+    inline-size: rem(200);
+
+    img {
+      inline-size: rem(80);
+    }
+  }
+
+  &:hover {
+    animation: anime-hover-state 400ms ease-in-out infinite alternate;
+  }
+
+  .rock & {
+    --border-clr: var(--clr-accent-900);
+    --border-clr-accent: var(--clr-accent-800);
+  }
+
+  .paper & {
+    --border-clr: var(--clr-accent-700);
+    --border-clr-accent: var(--clr-accent-600);
+  }
+
+  .scissors & {
+    --border-clr: var(--clr-accent-500);
+    --border-clr-accent: var(--clr-accent-400);
+  }
+
+  .spot & {
+    border: none;
+
+    background-color: var(--clr-primary-400);
+    box-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+@keyframes anime-hover-state {
+  0% {
+    transform: rotate(-20deg);
+  }
+
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+.spot .tokens[data-winner="winner"] {
+  box-shadow: 0 0 0 rem(40) rgba(hsl(217deg, 16%, 45%), 15%),
+    0 0 0 rem(80) rgba(hsl(217deg, 16%, 45%), 10%),
+    0 0 0 rem(120) rgba(hsl(217deg, 16%, 45%), 5%);
+
+  animation: anime-scale-up 350ms ease-in-out forwards;
+}

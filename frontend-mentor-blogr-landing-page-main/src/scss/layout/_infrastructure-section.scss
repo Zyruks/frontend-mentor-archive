@@ -1,0 +1,94 @@
+@use "../abstract/" as *;
+
+/* ******************* *\
+? #infrastructure section
+\* ******************* */
+.infrastructure-section {
+  border-radius: rem(0) rem(80);
+
+  background-image: linear-gradient(
+    180deg,
+    var(--body-gradient-one) 0%,
+    var(--body-gradient-two) 100%
+  );
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 150%;
+  block-size: 100%;
+  min-block-size: rem(550);
+  inline-size: 100%;
+  margin-block-start: rem(200);
+
+  & .headings-h2 {
+    margin-block-start: rem(130);
+    @include breakpoint(large) {
+      margin-block-start: rem(0);
+    }
+  }
+
+  & .descriptions {
+    inline-size: 80%;
+  }
+  @include breakpoint(large) {
+    min-block-size: rem(350);
+
+    background-image: linear-gradient(
+      90deg,
+      var(--body-gradient-one) 0%,
+      var(--body-gradient-two) 100%
+    );
+  }
+}
+
+.infrastructure-section-wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  border-radius: rem(0) rem(80);
+
+  background-image: url("../assets/images/bg-pattern-circles.svg");
+
+  background-repeat: no-repeat;
+  background-position: center rem(-250);
+  background-size: rem(600);
+  min-block-size: rem(550);
+  @include breakpoint(large) {
+    flex-direction: row;
+
+    background-position: rem(-150) rem(-350);
+    background-size: rem(800);
+    min-block-size: rem(350);
+    max-block-size: rem(350);
+    padding-inline: rem(120);
+  }
+}
+
+.infrastructure-section img {
+  position: absolute;
+
+  inline-size: rem(400);
+
+  inset-block-start: rem(-180);
+  @include breakpoint(large) {
+    position: relative;
+    inset-block-start: rem(0);
+    inline-size: rem(600);
+  }
+}
+
+.infrastructure-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ******************* *\
+? #infrastructure section end
+\* ******************* */

@@ -1,0 +1,40 @@
+$font-families: (
+  "base": "Barlow Semi Condensed",
+);
+$font-sizes: (
+  "static": (
+    100: 0.25rem,
+    200: 0.5rem,
+    300: 0.75rem,
+    400: 1rem,
+    500: 1.5rem,
+    600: 2rem,
+    700: 2.5rem,
+    800: 3rem,
+    900: 4rem,
+  ),
+  "fluid": (
+    // 15px to 24px
+    400: clamp(0.94rem, calc(0.68rem + 1.09vw), 1.5rem),
+    // 18px to 30
+    500: clamp(3.75rem, calc(2.94rem + 3.47vw), 5.63rem),
+  ),
+);
+$font-weights: (
+  "600": 600,
+  "700": 700,
+);
+$line-heights: (
+  "100": 0.8,
+  "400": 1,
+  "500": 1.1,
+  "600": 1.5,
+  "700": 1.6,
+  "800": 1.8,
+  "900": 2,
+);
+$letter-spacings: (
+  "extra-tight": rem(-2),
+  "tight": rem(-1),
+  "loose": rem(1),
+);

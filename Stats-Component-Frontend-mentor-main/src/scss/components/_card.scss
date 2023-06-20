@@ -1,0 +1,109 @@
+@use "../abstract/" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: rem(6);
+  overflow: hidden;
+
+  background-color: var(--card-bg);
+  max-inline-size: rem(330);
+
+  @include breakpoint(large) {
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    max-inline-size: rem(700);
+    block-size: rem(250);
+  }
+}
+
+.img-wrapper {
+  inline-size: 100%;
+
+  position: relative;
+  @include breakpoint(large) {
+    order: 2;
+    inline-size: 70%;
+    block-size: 100%;
+  }
+}
+
+.card-img {
+  object-fit: cover;
+
+  filter: contrast(70%) brightness(130%);
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.filter-color {
+  position: absolute;
+
+  background-color: var(--accent-color);
+  opacity: 90%;
+  filter: contrast(120%);
+  mix-blend-mode: multiply;
+
+  inset-block-start: 0;
+
+  inline-size: 100%;
+
+  block-size: 100%;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: rem(16);
+  margin-block: rem(24);
+  inline-size: 100%;
+
+  @include breakpoint(large) {
+    align-items: flex-start;
+    justify-content: space-between;
+    order: 1;
+    margin: 0;
+    padding-inline-start: rem(30);
+    inline-size: 80%;
+  }
+}
+
+.card-text__title {
+  inline-size: 80%;
+}
+
+.card-text__description {
+  inline-size: 95%;
+  @include breakpoint(large) {
+    inline-size: 70%;
+  }
+}
+
+.card-text__data {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  margin-block: rem(24);
+  @include breakpoint(large) {
+    flex-direction: row;
+    gap: rem(52);
+    margin: 0;
+    margin-block-start: rem(28);
+    inline-size: 100%;
+  }
+}
+
+.data-division {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+  justify-content: flex-start;
+  @include breakpoint(large) {
+    gap: rem(6);
+  }
+}

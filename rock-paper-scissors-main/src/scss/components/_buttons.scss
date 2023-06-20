@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.btn {
+  border: rem(2) solid var(--clr-neutral-500);
+  border-radius: rem(10);
+
+  color: var(--clr-neutral-100);
+  text-transform: uppercase;
+
+  background-color: transparent;
+
+  padding-block: rem(10);
+  padding-inline: rem(40);
+  cursor: pointer;
+
+  transition: background-color 300ms ease-in-out, color 300ms ease-in;
+
+  &:hover {
+    color: var(--clr-accent-900);
+
+    background-color: var(--clr-neutral-500);
+  }
+}
+
+.btn-primary {
+  display: flex;
+  flex-direction: column;
+
+  color: hsl(0deg, 0%, 100%);
+
+  background-color: hsl(0deg, 0%, 100%);
+}

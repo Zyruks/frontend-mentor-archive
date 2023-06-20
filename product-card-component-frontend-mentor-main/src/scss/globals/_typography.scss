@@ -1,0 +1,79 @@
+@use "../abstract" as *;
+
+body {
+  font-weight: 500;
+
+  /* Extend `.$font` in abstract/_fonts.scss */
+  font-family: $primary-font;
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0;
+
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h4 {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* ******************* *\
+ ? #card typography
+\* ******************* */
+.card-text__type {
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  font-size: rem(12);
+  font-family: $primary-font;
+  letter-spacing: rem(5);
+  text-transform: uppercase;
+}
+
+.card-text__title {
+  font-size: rem(34);
+  font-family: $secondary-font;
+  line-height: rem(36);
+}
+
+.card-text__description {
+  color: var(--dark-grayish-blue);
+  font-weight: 400;
+  font-size: rem(14);
+  font-family: $primary-font;
+  line-height: rem(24);
+}
+
+.final-price {
+  color: var(--primary-color);
+  font-size: rem(32);
+  font-family: $secondary-font;
+}
+
+.original-price {
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  font-size: rem(16);
+  font-family: $primary-font;
+  text-decoration: line-through rem(2);
+}
+
+.card-text__add-to-card {
+  color: var(--white);
+  font-weight: 700;
+  font-size: rem(16);
+  font-family: $primary-font;
+}
+
+/* ******************* *\
+? #card typography end
+\* ******************* */

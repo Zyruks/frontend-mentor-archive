@@ -1,0 +1,24 @@
+@use "../abstract/" as *;
+@use "sass:string";
+@use "sass:map";
+/* utility  classes */
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .text-#{$color}-#{$shade} {
+      color: var(--clr-#{$color}-#{$shade});
+    }
+    .bg-#{$color}-#{$shade} {
+      background-color: var(--clr-#{$color}-#{$shade});
+    }
+    .border-top-#{$color}-#{$shade} {
+      border-top: rem(5) solid var(--clr-#{$color}-#{$shade});
+    }
+  }
+}
+
+.drop-shadow {
+  box-shadow: 0px 17.5px 16.8px -7px rgba(17, 27, 39, 0.024),
+    0px 13px 18.9px -7px rgba(17, 27, 39, 0.035),
+    0px 8.5px 15.7px -7px rgba(17, 27, 39, 0.046),
+    0px 26px 30px -7px rgba(17, 27, 39, 0.07);
+}

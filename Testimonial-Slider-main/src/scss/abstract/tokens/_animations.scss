@@ -1,0 +1,19 @@
+@use "../functions" as *;
+/* animations */
+$easing: (
+  "ease-in": cubic-bezier(0.5, 0, 1, 1),
+  "ease-out": cubic-bezier(0, 0, 0.4, 1),
+  "ease-in-out": cubic-bezier(0.45, 0, 0.4, 1),
+);
+
+$durations: (
+  "100": 75ms,
+  "200": 100ms,
+  "250": 150ms,
+  "300": 200ms,
+  "400": 250ms,
+  "500": 300ms,
+  "600": 350ms,
+  "700": 400ms,
+);
+/* animations end*/

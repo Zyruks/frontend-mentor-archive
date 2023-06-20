@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon responsive -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.webp"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.webp"
+    />
+    <!-- favicon responsive end-->
+
+    <title>Frontend Mentor |Interactive Rating Component</title>
+
+    <!-- Google Stuff -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Google Stuff -->
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Style end -->
+  </head>
+
+  <body>
+    <section>
+      <div class="review js-review" role="main">
+        <div class="icon-container">
+          <img
+            class="review-icon"
+            src="./assets/images/icon-star.svg"
+            alt="star icon"
+          />
+        </div>
+
+        <h1 class="review__title">How did we do?</h1>
+        <p class="review__paragraph">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div class="review__score js-review__score">
+          <button class="score__item js-score__item" data-score="1">1</button>
+          <button class="score__item js-score__item" data-score="2">2</button>
+          <button class="score__item js-score__item" data-score="3">3</button>
+          <button class="score__item js-score__item" data-score="4">4</button>
+          <button class="score__item js-score__item" data-score="5">5</button>
+        </div>
+        <button class="review__btn js-review__btn">SUBMIT</button>
+      </div>
+      <div class="review thank-you js-thank-you no-selected">
+        <img
+          class="review__svg"
+          src="./assets/images/illustration-thank-you.svg"
+          alt=""
+        />
+
+        <div class="review__option">
+          You selected <span class="js-score"></span> out of 5
+        </div>
+        <h2 class="review__title">Thanks you!</h2>
+        <p class="review__paragraph thank-you__paragraph">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don't hesitate to get in touch!
+        </p>
+      </div>
+      <div class="review error js-error no-selected">
+        <img class="review__svg" src="./assets/images/warning.svg" alt="" />
+
+        <div class="review__option">You didn't select a score.</div>
+        <p class="review__paragraph thank-you__paragraph">
+          Please go back and choose from 1 to 5.
+        </p>
+
+        <button class="review__btn js-review__go-back-btn">Go Back</button>
+      </div>
+    </section>
+
+    <footer class="attribution">
+      <div>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/Zyruks">Zyruks</a>.
+      </div>
+    </footer>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

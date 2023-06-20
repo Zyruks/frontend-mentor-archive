@@ -1,0 +1,25 @@
+@use "../abstract" as *;
+/* stylelint-disable */
+.card {
+  --flow-space: 0.5rem;
+  padding-inline: var(--size-400);
+  padding-block: var(--size-500);
+
+  border-radius: var(--card-radius, 0.2rem);
+
+  background-color: var(--clr-neutral-100);
+
+  @include breakpoint(medium) {
+    padding-inline: var(--size-500);
+  }
+
+  p {
+    max-width: 25ch;
+    @include breakpoint(large) {
+      max-width: 30ch;
+    }
+  }
+
+  // property create it for animation porpuse
+  opacity: 0;
+}

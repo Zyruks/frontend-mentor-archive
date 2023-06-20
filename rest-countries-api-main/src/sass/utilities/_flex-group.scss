@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  column-gap: var(--flex-column-gap, $flex-group-gap);
+  row-gap: var(--flex-row-gap, calc($flex-group-gap / 2));
+
+  &[data-flex-position="center-space-between"] {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.flex-group.mx-auto {
+  justify-content: center;
+
+  @include mq(medium) {
+    &[data-flex-position="center-space-between"] {
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

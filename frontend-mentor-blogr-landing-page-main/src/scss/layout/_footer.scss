@@ -1,0 +1,59 @@
+@use "../abstract/" as *;
+
+/* ******************* *\
+? #footer 
+\* ******************* */
+
+.footer {
+  position: relative;
+
+  background-color: var(--footer-bg);
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(28);
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+
+  background-color: var(--footer-bg);
+  border-start-end-radius: rem(80);
+  padding-block: rem(70);
+
+  @include breakpoint(large) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-inline-size: rem(1220);
+  }
+}
+
+.footer img {
+  margin-block-end: rem(40);
+}
+
+.footer-division {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: 0;
+  inline-size: 100%;
+}
+
+/* ******************* *\
+? #footer end
+\* ******************* */

@@ -1,0 +1,83 @@
+@use "../abstract/" as *;
+
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-block: rem(150);
+  padding-inline: rem(16);
+
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-items: center;
+
+    column-gap: rem(16);
+  }
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  align-items: center;
+  justify-content: center;
+
+  margin-block-start: rem(50);
+  @include breakpoint(large) {
+    max-inline-size: rem(320);
+  }
+
+  @include breakpoint(x-large) {
+    max-inline-size: rem(380);
+  }
+}
+
+.testimonials-section .headings-h2 {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  inline-size: 100%;
+
+  text-align: center;
+}
+
+.testimonials__img {
+  inline-size: rem(70);
+
+  border-radius: 50%;
+
+  transition: transform 500ms ease-in-out;
+
+  &:hover {
+    transform: rotate(20deg);
+  }
+  @include breakpoint(large) {
+    inline-size: rem(80);
+  }
+}
+
+.testimonials .descriptions {
+  inline-size: 70%;
+
+  margin-block-start: rem(20);
+  @include breakpoint(large) {
+    inline-size: 100%;
+  }
+}
+
+.testimonials-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  align-items: center;
+  justify-content: center;
+  margin-block-start: rem(30);
+}
+
+.headings-h3 {
+  margin: 0;
+}

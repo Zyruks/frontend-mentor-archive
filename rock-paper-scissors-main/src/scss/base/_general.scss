@@ -1,0 +1,43 @@
+@use "../abstracts/" as *;
+
+body {
+  overflow: hidden;
+
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-400);
+  font-family: var(--ff-base);
+  line-height: var(--lh-600);
+
+  background-image: getter($gradients, "background");
+
+  & > .container {
+    display: grid;
+    grid-template-rows: 0.25fr 1fr 0.1fr;
+
+    block-size: 100vh;
+    padding-block: rem(50);
+  }
+}
+
+main {
+  position: relative;
+
+  & > .container {
+    display: grid;
+    block-size: 100%;
+  }
+}
+
+footer > .container {
+  display: flex;
+
+  inline-size: 100%;
+
+  gap: rem(16);
+  justify-content: center;
+
+  @include mq(large) {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,55 @@
+@use "../abstracts/" as *;
+
+// ? Transition is inherit from :Root
+
+body {
+  --bg-color: #{$body-background-color-light};
+  --text-color: #{$body-text-color-light};
+  --bg-secondary-color: #{$header-background-color-light};
+  overflow-x: hidden;
+
+  font-weight: $body-font-weight;
+  font-size: $body-font-size;
+  font-family: $font-family-base;
+  line-height: $body-line-height;
+
+  background-color: var(--bg-color);
+
+  transition: inherit;
+
+  @media (prefers-color-scheme: dark) {
+    --bg-color: #{$body-background-color-dark};
+    --text-color: #{$body-text-color-dark};
+    --bg-secondary-color: #{$header-background-color-dark};
+
+    color: var(--text-color);
+
+    background-color: var(--bg-color);
+  }
+
+  &[data-dark-mode="on"] {
+    --bg-color: #{$body-background-color-dark};
+    --text-color: #{$body-text-color-dark};
+    --bg-secondary-color: #{$header-background-color-dark};
+    --hover-bg-color: #{$body-background-color-dark};
+    --text-secondary-color: #{$color-secondary-text-color-dark};
+  }
+
+  &[data-dark-mode="off"] {
+    --bg-color: #{$body-background-color-light};
+    --text-color: #{$body-text-color-light};
+    --bg-color-800: #{$color-neutral-100};
+    --bg-secondary-color: #{$header-background-color-light};
+    --hover-bg-color: #{$color-neutral-300};
+    --text-secondary-color: #{$color-secondary-text-color-light};
+  }
+}
+
+header {
+  transition: inherit;
+  transition-duration: 400ms;
+}
+
+ul {
+  color: var(--text-color);
+}

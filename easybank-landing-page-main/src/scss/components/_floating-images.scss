@@ -1,0 +1,31 @@
+@use "../abstract" as *;
+
+.floating-img {
+  &::before {
+    position: absolute;
+    inset-block-start: -5%;
+    inset-inline-end: 0;
+
+    z-index: -1;
+    inline-size: 100%;
+    block-size: 100%;
+
+    background-image: url("../assets/svg/bg-intro-mobile.svg");
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+
+    content: "";
+
+    @include breakpoint(medium) {
+      background-image: url("../assets/svg/bg-intro-desktop.svg");
+      inset-block-start: -20%;
+      inset-inline-end: -43%;
+    }
+    @include breakpoint(large) {
+      inset-block-start: -20%;
+
+      background-size: 100%;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@use "../abstract" as *;
+
+body {
+  font-family: var(--ff-primary);
+}
+
+h1 {
+  font-family: var(--ff-headings);
+}
+
+p {
+  font-family: var(--ff-body);
+}
+
+/* ******************* *\
+? #header typography 
+\* ******************* */
+
+.font-nav {
+  font-weight: var(--fw-300);
+  font-size: var(--fs-nav);
+  font-family: var(--ff-headings);
+  text-align: start;
+  text-transform: uppercase;
+
+  @include breakpoint(large) {
+    font-weight: var(--fw-600);
+    font-size: var(--fs-nav);
+    text-align: end;
+    text-transform: capitalize;
+  }
+}
+
+/* ******************* *\
+? #header typography end
+\* ******************* */

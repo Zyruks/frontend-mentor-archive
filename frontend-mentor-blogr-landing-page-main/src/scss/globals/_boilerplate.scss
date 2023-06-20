@@ -1,0 +1,59 @@
+@use "../abstract" as *;
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+
+  font-size: 100%; // for accessibility purpose
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--white);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--graphic-text);
+  text-decoration: none;
+}
+
+picture {
+  display: block;
+
+  line-height: 0;
+}
+
+/* part of frontend mentor Challenge identifier */
+.attribution {
+  position: absolute;
+
+  inline-size: 100%;
+
+  color: var(--white);
+  text-align: center;
+  inset-block-end: rem(10);
+
+  & a {
+    color: var(--cta-text);
+
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+      color: var(--hover-bg);
+    }
+  }
+}

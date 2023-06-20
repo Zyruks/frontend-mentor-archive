@@ -1,0 +1,19 @@
+@use "../abstract" as *;
+
+section {
+  inline-size: rem(330);
+  margin-block: rem(60);
+
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(large) {
+    flex-direction: row;
+    inline-size: rem(900);
+
+    align-items: center;
+
+    margin: 0;
+    block-size: 95vh;
+  }
+}

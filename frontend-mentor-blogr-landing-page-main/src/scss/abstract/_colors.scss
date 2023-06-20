@@ -1,0 +1,31 @@
+// !Don't Use SCSS or SASS Variables, use the CSS Variables instead
+
+:root {
+  /* Primary */
+  --cta-text: hsl(356deg, 100%, 66%);
+  --hover-bg: hsl(355deg, 100%, 74%);
+  --headings: hsl(208deg, 49%, 24%);
+
+  /* Neutral */
+
+  --white: hsl(0deg, 0%, 100%);
+  --footer-text: hsl(240deg, 2%, 79%);
+  --footer-bg: hsl(240deg, 10%, 16%);
+  --body-copy: hsl(207deg, 13%, 34%);
+  --dropdown-bg: hsl(0deg, 0%, 90%);
+
+  /* 
+  ? Gradients
+  Background gradient - Intro/CTA mobile nav:
+  */
+  --mobile-gradient-one: hsl(13deg, 100%, 72%);
+  --mobile-gradient-two: hsl(353deg, 100%, 62%);
+
+  /* 
+  ? Background gradients
+  body
+  */
+
+  --body-gradient-one: hsl(237deg, 17%, 21%);
+  --body-gradient-two: hsl(237deg, 23%, 32%);
+}

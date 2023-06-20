@@ -1,0 +1,23 @@
+@use "../abstracts" as *;
+
+@each $font-size, $sizes-map in $font-sizes {
+  @each $size-name, $size-value in $sizes-map {
+    @if $font-size == "static" {
+      .fs-#{$size-name} {
+        font-size: var(--fs-#{$size-name});
+
+        @if ($size-name > 600) {
+          line-height: var(--lh-400);
+        }
+      }
+    } @else {
+      .fs-#{$size-name}[data-type="#{$font-size}"] {
+        font-size: var(--#{$font-size}-fs-#{$size-name});
+
+        @if ($size-name > 600) {
+          line-height: var(--lh-400);
+        }
+      }
+    }
+  }
+}

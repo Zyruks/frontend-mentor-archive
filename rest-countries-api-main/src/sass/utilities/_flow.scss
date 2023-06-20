@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+.flow > *:where(:not(:first-child)) {
+  margin-block-start: var(--flow-spacer, 1rem);
+
+  .huge-flow & {
+    --flow-spacer: calc(#{$size-10} + #{$size-3}); // 3rem + 0.75rem
+  }
+}

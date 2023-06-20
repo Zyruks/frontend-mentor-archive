@@ -1,0 +1,21 @@
+@use "sass:map";
+
+$colors: (
+  "primary": (
+    "none": none,
+  ),
+  "accent": (
+    "none": none,
+  ),
+  "neutral": (
+    "100": hsl(0deg, 0%, 100%),
+    "200": hsl(0deg, 0%, 90%),
+    "300": hsl(0deg, 0%, 80%),
+    "400": hsl(0deg, 0%, 70%),
+    "500": hsl(0deg, 0%, 60%),
+    "600": hsl(0deg, 0%, 50%),
+    "700": hsl(0deg, 0%, 40%),
+    "800": hsl(0deg, 0%, 30%),
+    "900": hsl(0deg, 0%, 0%),
+  ),
+);

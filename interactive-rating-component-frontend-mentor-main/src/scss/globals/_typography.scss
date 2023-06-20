@@ -1,0 +1,74 @@
+@use "../abstract" as *;
+
+body {
+  font-weight: 500;
+
+  /* Extend `.$font` in abstract/_fonts.scss */
+  font-family: $primary-font;
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0;
+
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h4 {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* ******************* *\
+ ? #main typography
+\* ******************* */
+.review__title {
+  color: var(--white);
+  font-weight: 700;
+  @include breakpoint(large) {
+    font-size: rem(30);
+  }
+}
+
+.review__paragraph {
+  color: var(--light-grey);
+  font-size: rem(14);
+  line-height: rem(26);
+  @include breakpoint(large) {
+    font-size: rem(16);
+  }
+}
+
+.score__item {
+  color: var(--light-grey);
+  font-weight: 700;
+  @include breakpoint(large) {
+    font-size: rem(16);
+  }
+}
+
+.review__btn {
+  color: var(--white);
+  font-weight: 700;
+  font-size: rem(16);
+  letter-spacing: rem(3);
+  @include breakpoint(large) {
+    font-size: rem(18);
+  }
+}
+
+/* ******************* *\
+? #main typography end
+\* ******************* */
+
+.review__option {
+  font-size: rem(18);
+}

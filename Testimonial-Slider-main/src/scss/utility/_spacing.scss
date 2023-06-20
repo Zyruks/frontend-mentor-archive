@@ -1,0 +1,74 @@
+@use "../abstract/" as *;
+@use "sass:string";
+
+/* Creating a class for each box, position, and space. */
+@each $box in $boxes {
+  @each $position in $block-positions {
+    @each $space, $value in $spaces {
+      @if ($position == "") {
+        .#{$box}-#{$space} {
+          #{$box}: #{$value};
+        }
+      } @else {
+        .#{$box}-#{$position}-#{$space} {
+          #{$box}-#{$position}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+/* It's creating a class for each gap and value in the spaces variable. */
+@each $gap, $value in $spaces {
+  .gap-#{$gap} {
+    gap: #{$value};
+  }
+
+  .row-gap-#{$gap} {
+    row-gap: #{$value};
+  }
+  .column-gap-#{$gap} {
+    column-gap: #{$value};
+  }
+}
+
+/* It's creating a class for each radius and value in the corner-radius variable. */
+@each $radius, $value in $corner-radius {
+  .border-radius-#{$radius} {
+    border-radius: #{$value};
+  }
+}
+
+/* It's creating a class for each item and position in the aligns and content-positions variables. */
+@each $item in $aligns {
+  @each $position in $content-positions {
+    .#{$item}-#{$position} {
+      #{$item}: #{$position};
+    }
+  }
+}
+/* It's creating a class for each item and value in the spaces variable. */
+
+@each $space, $value in $spaces {
+  .max-width-#{$space} {
+    max-inline-size: #{$value};
+  }
+}
+
+/* It's creating a class for each item and value in the displays variable. */
+@each $display, $value in $displays {
+  .dp-#{$display} {
+    display: #{$value};
+  }
+}
+
+/* It's creating a class for each item and value in the percentages variable. */
+@each $percentage, $value in $percentages {
+  .width-#{$percentage} {
+    inline-size: #{$value};
+  }
+}
+
+.position-relative {
+  position: relative;
+}

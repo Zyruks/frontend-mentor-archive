@@ -1,0 +1,68 @@
+@use "../abstract/" as *;
+
+/* ******************* *\
+? #hero 
+\* ******************* */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: rem(15);
+  align-items: center;
+  inline-size: 100%;
+
+  // * Duplicate if browser can't render gradients.
+  background: var(--cta-text);
+  background: url("../assets/images/bg-pattern-intro-mobile.svg"),
+    linear-gradient(
+      140deg,
+      var(--mobile-gradient-one) 0%,
+      var(--mobile-gradient-two) 80%
+    );
+  background-repeat: no-repeat;
+  background-position: 35% 35%;
+  background-size: 300%;
+  border-end-start-radius: rem(120);
+  padding-block-start: rem(180);
+
+  block-size: rem(600);
+
+  @include breakpoint(large) {
+    background: url("../assets/images/bg-pattern-intro-desktop.svg"),
+      linear-gradient(
+        90deg,
+        var(--mobile-gradient-one) 0%,
+        var(--mobile-gradient-two) 65%
+      );
+    background-position: 25% 52%;
+    background-size: 230%;
+    block-size: rem(500);
+  }
+}
+
+.headings-h1 {
+  inline-size: rem(330);
+  @include breakpoint(large) {
+    inline-size: 100%;
+  }
+}
+
+.hero__p {
+  inline-size: rem(300);
+  @include breakpoint(large) {
+    inline-size: 100%;
+  }
+}
+
+.hero-btn-wrapper {
+  display: flex;
+  gap: rem(16);
+  align-items: center;
+  justify-content: center;
+  margin-block-start: rem(40);
+  inline-size: 100%;
+}
+
+/* ******************* *\
+? #hero end
+\* ******************* */

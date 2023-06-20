@@ -1,0 +1,88 @@
+@use "../abstract/" as *;
+
+/* ******************* *\
+? #content-info
+\* ******************* */
+
+.content-info {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+  align-items: center;
+  padding-block-start: rem(80);
+  padding-block-end: rem(80);
+  justify-content: center;
+  inline-size: 100%;
+
+  @include breakpoint(large) {
+    display: grid;
+    grid-template-rows: rem(250) rem(250);
+    grid-template-columns: 1fr 1fr;
+
+    padding-block-start: rem(250);
+    max-inline-size: rem(1200);
+
+    row-gap: rem(60);
+
+    column-gap: 0;
+  }
+
+  @include breakpoint(x-large) {
+    row-gap: rem(30);
+
+    grid-template-rows: rem(300) rem(300);
+  }
+}
+
+.content-info__img {
+  inline-size: 100%;
+  @include breakpoint(large) {
+    align-self: flex-start;
+    inline-size: 200%;
+  }
+  @include breakpoint(x-large) {
+    inline-size: 170%;
+  }
+}
+
+.content-block {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+  align-items: center;
+  padding-inline: rem(40);
+  justify-content: center;
+
+  & .headings-h3 {
+    inline-size: 80%;
+  }
+
+  @include breakpoint(large) {
+    align-items: flex-start;
+
+    & .headings-h3 {
+      inline-size: 100%;
+    }
+  }
+}
+
+.content-info__title {
+  @include breakpoint(large) {
+    position: absolute;
+    inset-block-start: rem(140);
+    inset-inline: 0;
+  }
+}
+
+.content-info__description {
+  inline-size: 90%;
+  @include breakpoint(large) {
+    inline-size: 100%;
+  }
+}
+
+/* ******************* *\
+? #content-info end
+\* ******************* */

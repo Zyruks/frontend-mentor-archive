@@ -1,0 +1,97 @@
+@use "../abstract/" as *;
+
+.card {
+  margin: 0 auto;
+  border-radius: rem(10);
+  inline-size: rem(360);
+
+  background-color: var(--white);
+  @include breakpoint(x-large) {
+    display: flex;
+    inline-size: rem(600);
+    block-size: rem(450);
+  }
+}
+
+.card__img-wrapper {
+  border-radius: rem(10) rem(10) rem(0) rem(0);
+
+  overflow: hidden;
+  block-size: rem(250);
+
+  @include breakpoint(x-large) {
+    border-radius: rem(10) rem(0) rem(0) rem(10);
+    block-size: 100%;
+    inline-size: 100%;
+
+    line-height: 0; // Trick to not display the picture tag.
+  }
+}
+
+.card__img {
+  animation: key-up-to-down 1.2s ease-in-out, forwards;
+  max-inline-size: 100%;
+  @include breakpoint(x-large) {
+    border-radius: rem(10) rem(0) rem(0) rem(10);
+
+    inline-size: 100%;
+    block-size: 100%;
+  }
+}
+
+.card-text {
+  padding: rem(16) rem(24);
+
+  animation: key-left-to-right 800ms ease-in-out, forwards;
+  @include breakpoint(x-large) {
+    max-inline-size: 50%;
+
+    padding: rem(32) rem(24);
+  }
+}
+
+.card-text__title {
+  inline-size: 95%;
+  margin-block: rem(20);
+
+  animation: key-left-to-right 1.2s ease-in-out, forwards;
+}
+
+.card-text__description {
+  margin-block-end: rem(15);
+
+  @include breakpoint(x-large) {
+    inline-size: 90%;
+  }
+}
+
+.card-text__price {
+  display: flex;
+  gap: rem(22);
+  align-items: center;
+
+  animation: key-left-to-right 1.2s ease-in-out, forwards;
+}
+
+.card-text__add-to-card {
+  display: flex;
+  gap: rem(14);
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: rem(10);
+
+  background-color: var(--primary-color);
+  margin-block: rem(24);
+  inline-size: 100%;
+  padding-block: rem(12);
+
+  &:hover {
+    background-color: var(--dark-primary);
+  }
+
+  @include breakpoint(x-large) {
+    margin-block-end: 0;
+  }
+}

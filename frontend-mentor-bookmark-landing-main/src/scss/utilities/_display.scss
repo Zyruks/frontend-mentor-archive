@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+@each $display-value in $displays {
+  .dp-#{$display-value} {
+    display: $display-value;
+  }
+}

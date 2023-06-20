@@ -1,0 +1,49 @@
+@use "../abstract/" as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("../assets/images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  inset-block-start: 0;
+  block-size: 100vh;
+  inline-size: 100vw;
+  max-block-size: rem(650);
+
+  @include breakpoint(small) {
+    background-image: url("../assets/images/desktop/image-hero.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.hero .container {
+  inline-size: 100%;
+  padding-inline: 5%;
+  @include breakpoint(small) {
+    max-inline-size: rem(1200);
+  }
+
+  @include breakpoint(x-large) {
+    padding: 0;
+  }
+}
+
+.hero h1 {
+  padding-inline-start: var(--size-200);
+  padding-block: var(--size-200);
+
+  border: rem(2) solid var(--clr-neutral-100);
+  @include breakpoint(small) {
+    padding-inline: var(--size-200);
+    max-inline-size: rem(320);
+  }
+
+  @include breakpoint(large) {
+    max-inline-size: rem(650);
+  }
+}

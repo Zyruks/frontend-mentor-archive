@@ -1,0 +1,72 @@
+@use "../abstract/" as *;
+
+.footer {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  align-items: center;
+  justify-content: flex-start;
+
+  background-color: var(--footer-bg);
+
+  block-size: rem(400);
+}
+
+.footer-logo {
+  inline-size: rem(190);
+
+  margin-block-start: rem(100);
+
+  filter: invert(49%) sepia(44%) saturate(411%) hue-rotate(118deg)
+    brightness(70%) contrast(120%);
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  inline-size: 80%;
+  margin-block-end: rem(80);
+
+  @include breakpoint(medium) {
+    inline-size: 50%;
+    max-inline-size: rem(300);
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  inline-size: 50%;
+  margin-block-end: rem(50);
+
+  @include breakpoint(medium) {
+    inline-size: 30%;
+    max-inline-size: rem(200);
+  }
+
+  img {
+    transition: filter 300ms ease-in-out;
+
+    &:hover {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(130deg)
+        brightness(200%) contrast(100%);
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+
+  align-self: flex-end;
+  inline-size: 100%;
+
+  inset-block-end: rem(5);
+
+  a {
+    transition: color 300ms ease-in-out;
+  }
+}

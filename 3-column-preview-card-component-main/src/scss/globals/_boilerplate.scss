@@ -1,0 +1,58 @@
+@use "../abstract" as *;
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+
+  font-size: 100%; // for accessibility purpose
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint(large) {
+    block-size: 100vh;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--sedans-bg);
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(92, 92, 92);
+  }
+}
+
+footer {
+  inline-size: 100%;
+}
+
+.attribution {
+  color: hsl(0deg, 0%, 0%);
+  text-align: center;
+  margin-block-start: rem(50);
+  inline-size: 100%;
+
+  @include breakpoint(large) {
+    margin: 0;
+    block-size: 5vh;
+  }
+}

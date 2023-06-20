@@ -1,0 +1,65 @@
+@use "../functions" as *;
+/* fonts */
+$font-families: (
+  "headings": "Public sans",
+  "body": "Public sans",
+);
+
+$font-sizes: (
+  "classic": (
+    "100": 0.25rem,
+    "200": 0.5rem,
+    "300": 0.75rem,
+    "400": 1rem,
+    "450": 1.125rem,
+    "500": 1.5rem,
+    "600": 2rem,
+    "700": 2.5rem,
+    "800": 3rem,
+    "900": 4rem,
+  ),
+  "fluid": (
+    //  8.68px to 12.19
+    "100": clamp(0.54rem, calc(0.44rem + 0.44vw), 0.77rem),
+    // 10.42px to 15.16
+    "200": clamp(0.65rem, calc(0.51rem + 0.6vw), 0.96rem),
+    // 12.50px to 19.20
+    "300": clamp(0.78rem, calc(0.59rem + 0.81vw), 1.2rem),
+    // 15px to 24
+    "400": clamp(0.94rem, calc(0.68rem + 1.09vw), 1.5rem),
+    // 18px to 30
+    "500": clamp(1.13rem, calc(0.78rem + 1.45vw), 1.88rem),
+    // 21.60px to 37.50
+    "600": clamp(1.35rem, calc(0.9rem + 1.93vw), 2.34rem),
+    // 25.92px to 46.88
+    "700": clamp(1.62rem, calc(1.02rem + 2.54vw), 2.93rem),
+    // 31.10px to 58.59
+    "800": clamp(1.94rem, calc(1.16rem + 3.33vw), 3.66rem),
+    // 37.32px to 73.24
+    "900": clamp(2.33rem, calc(1.31rem + 4.35vw), 4.58rem),
+  ),
+);
+
+$font-weights: (
+  "300": 300,
+  "400": 400,
+  "700": 700,
+);
+
+$line-heights: (
+  "400": 1,
+  "500": 1.1,
+  "600": 1.5,
+  "700": 1.6,
+  "800": 1.8,
+  "900": 2,
+);
+
+$text-align: ("start", "end", "center", "justify");
+
+$letter-spacings: (
+  "extra-tight": rem(-2),
+  "tight": rem(-1),
+  "loose": rem(1),
+);
+/* fonts end */

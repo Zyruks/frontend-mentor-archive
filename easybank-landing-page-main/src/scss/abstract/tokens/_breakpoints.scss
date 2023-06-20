@@ -1,0 +1,19 @@
+@use "../functions" as *;
+/* breakpoints */
+
+/* em units are best for breakpoints, rem have bugs on safari. 05/10/2022 */
+$breakpoints: (
+  "small": em(481),
+  "medium": em(700),
+  "large": em(1025),
+  "x-large": em(1200),
+);
+
+/* 0.2px difference that way no visual bug and problems with breakpoints-up */
+$breakpoints-max: (
+  "small": em(481.9988),
+  "medium": em(699.9988),
+  "large": em(1024.9988),
+);
+
+/* breakpoints end */

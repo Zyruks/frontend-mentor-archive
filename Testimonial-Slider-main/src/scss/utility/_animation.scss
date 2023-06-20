@@ -1,0 +1,55 @@
+@use "../abstract" as *;
+
+@keyframes anima-leave-left {
+  0% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+.animation-leave-left {
+  animation: anima-leave-left 1s ease-in-out forwards;
+}
+
+@keyframes anima-leave-right {
+  0% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+.animation-leave-right {
+  animation: anima-leave-right 1s ease-in-out forwards;
+}
+@keyframes anima-back-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+.animation-back-right {
+  animation: anima-back-right 1s ease-in-out forwards;
+}
+@keyframes anima-back-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+.animation-back-left {
+  animation: anima-back-left 1s ease-in-out forwards;
+}

@@ -1,0 +1,37 @@
+@use "../abstract/" as *;
+
+.content-info {
+  inline-size: 100vw;
+
+  position: relative;
+}
+
+.images {
+  inline-size: 100%;
+}
+
+.content-info .images {
+  @include breakpoint(medium) {
+    z-index: 1;
+    inline-size: 70%;
+  }
+}
+
+.text-container {
+  background-color: var(--clr-neutral-100);
+  @include breakpoint(medium) {
+    position: absolute;
+    max-inline-size: rem(400);
+
+    inset-block-end: 0;
+
+    inset-inline-end: 0;
+
+    z-index: 2;
+    padding-block: rem(30);
+    padding-inline: rem(60);
+  }
+  @include breakpoint(large) {
+    max-inline-size: rem(600);
+  }
+}

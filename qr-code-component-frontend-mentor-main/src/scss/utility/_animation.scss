@@ -1,0 +1,25 @@
+@use "../abstract/" as *;
+
+@keyframes key-scale-up {
+  0% {
+    transform: scale(2);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+@keyframes key-bottom-to-top {
+  0% {
+    transform: translateY(rem(30));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(rem(0));
+    opacity: 100%;
+  }
+}

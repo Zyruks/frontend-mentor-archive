@@ -1,0 +1,31 @@
+@use "../abstract" as *;
+
+body {
+  color: var(--clr-primary-400);
+  font-weight: var(--fs-400);
+  font-size: var(--fs-300);
+  font-family: var(--ff-primary);
+  line-height: 1.6;
+
+  @include breakpoint(large) {
+    font-size: var(--fs-400);
+  }
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-primary-500);
+  line-height: 1.1;
+}
+
+main {
+  margin-inline: var(--size-600);
+  margin-block-end: var(--size-600);
+}
+
+h1,
+.primary-text p {
+  // added for animations
+  opacity: 0%;
+}

@@ -1,0 +1,69 @@
+@use "../functions" as *;
+
+/* buttons */
+
+$buttons: (
+  //  The font size and weight only control the [type="file"] if you need to change the font-size and font-weight use utility classes on parent element.
+  "mobile-font-size": var(--fluid-fs-300),
+  "font-size": var(--fluid-fs-200),
+  "font-weight": var(--fw-700),
+  "accent": var(--clr-accent-700),
+  "text": var(--clr-neutral-100),
+  "bg": var(--clr-neutral-100),
+  "input-well": var(--clr-neutral-200),
+  "padding-inline": 1ch,
+  "padding-block": 0.75ch,
+  "border-radius": var(--corner-radius-sides),
+  "border-color": var(--clr-primary-800),
+  "border-style": solid,
+  "border-width": rem(2),
+  "highlight-size": rem(0),
+  "highlight": none,
+  "text-shadow": 0 rem(1) 0 var(--clr-neutral-200),
+  "icon-size": 2ch,
+  "icon-color": var(--accent),
+  "shadow-color": hsl(220deg, 3%, 15%),
+  "shadow-1": 0 rem(1) rem(2) rem(-1) hsla(220deg, 3%, 15%, 10%),
+  "shadow-2": 0 rem(3) rem(5) rem(-2) hsla(220deg, 3%, 15%, 4%),
+  "shadow-3": 0 rem(7) rem(14) rem(-5) rgba(7, 131, 255, 0.06),
+  "shadow-depth": 0 rem(1) var(--clr-neutral-200)
+);
+
+$disable-btn: (
+  "bg": none,
+  "text": rgb(144, 156, 150),
+);
+
+$reset-btn: (
+  "border-color": hsl(0deg, 100%, 83%),
+  "highlight": hsl(0deg, 100%, 89%, 20%),
+  "text": hsl(0deg, 80%, 50%),
+);
+
+$custom-btn: (
+  "bg": linear-gradient(rgb(250, 92, 92), rgb(235, 66, 66)),
+  "border-color": rgb(245, 77, 77),
+  "text": hsl(228deg, 89%, 100%),
+  "text-shadow": 0 rem(1) 0 rgb(200, 55, 55),
+  "highlight": rgba(250, 92, 92, 0.2),
+  "shadow-1": rgb(245, 77, 77),
+  "shadow-2": 0 rem(3) rem(5) rem(-2) rgb(245, 77, 77),
+);
+
+$invisible-btn: (
+  "bg": none,
+  "border-color": none,
+  "text": none,
+  "text-shadow": none,
+  "highlight": none,
+  "shadow-1": none,
+  "shadow-2": none,
+);
+
+$prev-btn: (
+  "border-radius": rem(9999) 0 0 rem(9999),
+);
+
+$next-btn: (
+  "border-radius": 0 rem(9999) rem(9999) 0,
+);

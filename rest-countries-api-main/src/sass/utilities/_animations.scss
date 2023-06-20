@@ -1,0 +1,60 @@
+@use "../abstracts/" as *;
+
+.anime-fade-in {
+  animation-name: anime-fade-in;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.anime-fade-out {
+  animation-name: anime-fade-out;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anime-fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anime-fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.anime-translate-x {
+  animation-name: anime-translate-X;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anime-translate-X {
+  0% {
+    transform: translateX(var(--anime-translate-x-start));
+  }
+
+  100% {
+    transform: translateX(var(--anime-translate-x-end));
+  }
+}

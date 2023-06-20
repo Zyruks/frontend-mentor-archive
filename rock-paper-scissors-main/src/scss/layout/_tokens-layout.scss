@@ -1,0 +1,134 @@
+@use "../abstracts/" as *;
+
+.tokens-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  min-inline-size: rem(300);
+  inline-size: 100%;
+  max-inline-size: rem(450);
+  margin-inline: auto;
+  row-gap: rem(20);
+
+  column-gap: rem(40);
+
+  transition: transform 350ms ease-in-out;
+
+  @include mq(large) {
+    max-inline-size: rem(800);
+    row-gap: rem(0);
+    place-content: center;
+  }
+}
+
+.wrapper {
+  transform: translateX(0);
+
+  transition: transform 350ms ease-in-out;
+
+  @include mq(large) {
+    display: grid;
+
+    h3 {
+      grid-row: 1 / 2;
+      margin-block-end: 2rem;
+    }
+  }
+
+  &[data-player="user"] {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    justify-self: start;
+
+    &:hover .tokens {
+      // No animation if you already select a token
+      cursor: auto;
+
+      animation-name: none;
+    }
+    @include mq(large) {
+      align-self: start;
+      justify-self: end;
+    }
+
+    h3 {
+      visibility: hidden;
+    }
+  }
+
+  &[data-player="opponent"] {
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+    justify-self: end;
+
+    &:hover .tokens {
+      // No animation if you already select a token
+      cursor: auto;
+
+      animation-name: none;
+    }
+    @include mq(large) {
+      align-self: start;
+
+      justify-self: start;
+    }
+
+    h3 {
+      visibility: hidden;
+    }
+  }
+
+  &[data-status="disable"] {
+    display: none;
+  }
+}
+
+.rock {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  @include mq(large) {
+    align-self: start;
+  }
+}
+
+.paper,
+.spot-one {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  justify-self: start;
+
+  @include mq(large) {
+    align-self: start;
+    justify-self: end;
+  }
+}
+
+.scissors,
+.spot-two {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  justify-self: end;
+  @include mq(large) {
+    align-self: start;
+
+    justify-self: start;
+  }
+}
+
+.spot-two {
+  z-index: -1;
+}
+
+.triangle {
+  position: absolute;
+
+  margin-inline: auto;
+  inset-inline: 0;
+  inset-block-start: 15%;
+
+  @include mq(large) {
+    inset-block-start: 25%;
+
+    inline-size: rem(400);
+  }
+}

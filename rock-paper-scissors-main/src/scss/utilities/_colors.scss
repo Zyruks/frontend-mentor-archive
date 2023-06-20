@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+@each $color-name, $shade-map in $colors {
+  @each $shade-name, $shade-value in $shade-map {
+    .txt-#{$color-name}-#{$shade-name} {
+      color: var(--clr-#{$color-name}-#{$shade-name});
+    }
+    .bg-#{$color-name}-#{$shade-name} {
+      background-color: var(--clr-#{$color-name}-#{$shade-name});
+    }
+  }
+}

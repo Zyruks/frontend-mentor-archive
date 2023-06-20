@@ -1,0 +1,5 @@
+@use "../abstracts/" as *;
+
+.section {
+  padding-block: var(--section-margin, 4rem);
+}

@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+
+  inline-size: fit-content;
+}
+
+.flex-group.mx-auto {
+  justify-content: center;
+}

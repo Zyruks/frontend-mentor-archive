@@ -1,0 +1,54 @@
+@use "../abstracts/" as *;
+
+.select-container,
+.search-bar-container {
+  position: relative;
+  z-index: 4;
+}
+
+.search {
+  border-color: $search-border-color;
+  border-radius: $search-border-radius;
+
+  color: $search-color;
+  font-weight: $search-font-weight;
+  letter-spacing: $search-letter-spacing;
+
+  background-color: $search-background-color;
+
+  outline-color: $search-outline-color;
+  box-shadow: $search-box-shadow;
+
+  transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+
+  inline-size: $search-inline-size;
+
+  max-inline-size: $search-max-inline-size;
+
+  padding-block: $search-padding-block;
+  padding-inline-start: $search-padding-inline-start;
+
+  @include mq(medium) {
+    inline-size: $search-medium-inline-size;
+  }
+}
+
+.search-outline {
+  position: $search-icon-position;
+
+  z-index: $search-icon-z-index;
+
+  inline-size: $search-icon-inline-size;
+
+  margin-block: $search-icon-margin-block;
+  inset-inline-start: $search-icon-inset-inline-start;
+  inset-block: $search-icon-inset-block;
+
+  path {
+    stroke: var(--text-color);
+  }
+}
+
+label[for="search-bar"] {
+  display: none;
+}

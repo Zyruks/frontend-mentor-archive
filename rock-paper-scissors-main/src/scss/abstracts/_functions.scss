@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "sass:map";
+@use "sizes" as *;
+@use "colors" as *;
+
+// font-size: rem(30);
+
+// Throw an error if the parameter has a unit
+@function rem($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+
+    // if $pixel have a unit divide $pixel by 16 to return rems;
+  } @else {
+    @error "Don't use units when using the rem() function only numbers";
+
+    // otherwise (else)  $pixel has a unit, throw an error
+  }
+}
+
+@function em($pixel) {
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + em;
+
+    // if $pixel have a unit divide $pixel by 16 to return rems;
+  } @else {
+    @error "Don't use units when using the rem() function only numbers";
+
+    // otherwise (else)  $pixel has a unit, throw an error
+  }
+}
+
+@function getter($map, $variable...) {
+  $output: map.get($map, $variable...);
+
+  @if $output == null {
+    @error "that is not a valid key in the map";
+  } @else {
+    @return $output;
+  }
+}
+
+@function size($size) {
+  $output-size: map.get($sizes, $size);
+
+  @if ($output-size == null) {
+    @error "that is not a valid size";
+  } @else {
+    @return $output-size;
+  }
+}
+
+@function clr($color...) {
+  $output-color: map.get($colors, $color...);
+
+  @if ($output-color == null) {
+    @error "that is not a valid color";
+  } @else {
+    @return $output-color;
+  }
+}

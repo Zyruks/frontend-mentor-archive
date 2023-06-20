@@ -1,0 +1,44 @@
+@use "../abstracts/" as *;
+
+:root {
+  @each $color-name, $shade-map in $colors {
+    @each $shade-name, $shade-value in $shade-map {
+      --clr-#{$color-name}-#{$shade-name}: #{$shade-value};
+    }
+  }
+
+  @each $font-family, $value in $font-families {
+    --ff-#{$font-family}: "#{$value}", serif;
+  }
+
+  // font sizes
+  @each $size, $types in $font-sizes {
+    @each $type, $value in $types {
+      @if $size == "fluid" {
+        --fluid-fs-#{$type}: #{$value};
+      } @else {
+        --fs-#{$type}: #{$value};
+      }
+    }
+  }
+
+  // font weight
+  @each $weight, $value in $font-weights {
+    --fw-#{$weight}: #{$value};
+  }
+
+  // Letter Spacing
+  @each $space, $value in $letter-spacings {
+    --letter-spacing-#{$space}: #{$value};
+  }
+
+  // spaces
+  @each $size-name, $size-value in $sizes {
+    --size-#{$size-name}: #{$size-value};
+  }
+
+  // line heights
+  @each $height-name, $height-value in $line-heights {
+    --lh-#{$height-name}: #{$height-value};
+  }
+}

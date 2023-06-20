@@ -1,0 +1,32 @@
+@use "../abstract" as *;
+
+/**
+ * WRAPPER
+ * Sets a max width, adds a consistent gutter and horizontally
+ * centers the contents
+ */
+
+.wrapper {
+  inline-size: 95vw;
+
+  max-inline-size: rem(1300);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+
+  // position: relative;
+}
+
+.first-column {
+  grid-column: 1/2;
+}
+
+.stack > * + * {
+  margin-block-start: var(--space, 1.25rem);
+}
+
+.total-alignment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

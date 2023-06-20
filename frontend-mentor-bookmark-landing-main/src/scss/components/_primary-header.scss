@@ -1,0 +1,26 @@
+@use "../abstracts/" as *;
+
+/* TODO
+- [ ] need to change .logo to white version
+
+*/
+.logo,
+.burger-icon {
+  z-index: 2;
+}
+
+.primary-header {
+  --flex-column-gap: 3rem;
+
+  :where(& .flex-group) {
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--size-16);
+  }
+
+  .burger-icon {
+    @include mq(large) {
+      display: none;
+    }
+  }
+}

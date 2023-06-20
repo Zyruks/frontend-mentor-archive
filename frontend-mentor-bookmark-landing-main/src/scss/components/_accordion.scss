@@ -1,0 +1,94 @@
+@use "../abstracts/" as *;
+
+.questions .container {
+  display: grid;
+
+  place-items: center;
+}
+
+.accordion {
+  max-inline-size: 30rem;
+
+  font-size: var(--fluid-fs-300);
+
+  .accordion__header {
+    font-weight: var(--fw-400);
+  }
+
+  .accordion__show {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.accordion__item {
+  position: relative;
+
+  cursor: pointer;
+  margin-block: var(--size-48);
+
+  &::after {
+    position: absolute;
+
+    display: block;
+
+    background-color: var(--clr-neutral-400);
+    transform: translateY(rem(18));
+
+    opacity: 0.5;
+
+    content: "";
+    inset-block-end: 0;
+    inline-size: 100%;
+    block-size: rem(1);
+  }
+
+  &:hover {
+    .accordion__header {
+      color: var(--clr-primary-500);
+
+      transition: color 300ms ease-in-out;
+    }
+  }
+}
+
+// ? Js States
+.accordion-collapse {
+  padding-block-start: 1rem;
+
+  overflow: hidden;
+
+  &[data-state="hidden"] {
+    max-block-size: 0;
+
+    transition: max-block-size 300ms ease-in;
+  }
+
+  &[data-state="visible"] {
+    max-block-size: 10rem;
+
+    transition: max-block-size 300ms ease-in;
+  }
+}
+
+.accordion__arrow {
+  &[data-state="inactive"] {
+    path {
+      transform: rotate(0);
+      transform-origin: center center;
+
+      transition: transform 300ms ease-in-out, stroke 300ms ease-in-out;
+    }
+  }
+
+  &[data-state="active"] {
+    path {
+      transform: rotate(180deg);
+      transform-origin: center center;
+
+      transition: transform 300ms ease-in-out, stroke 300ms ease-in-out;
+
+      stroke: var(--clr-primary-500);
+    }
+  }
+}

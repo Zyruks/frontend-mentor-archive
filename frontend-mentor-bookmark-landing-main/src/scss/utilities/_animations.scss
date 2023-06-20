@@ -1,0 +1,80 @@
+@use "../abstracts/" as *;
+@keyframes anime-left-to-right-out {
+  0% {
+    transform: translateX(rem(0));
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(rem(300));
+    opacity: 0;
+  }
+}
+
+@keyframes anime-left-to-right-in {
+  0% {
+    transform: translateX(rem(-300));
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(rem(0));
+    opacity: 1;
+  }
+}
+
+@keyframes anime-right-to-left-out {
+  0% {
+    transform: translateX(rem(0));
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(rem(-300));
+    opacity: 0;
+  }
+}
+
+@keyframes anime-right-to-left-in {
+  0% {
+    transform: translateX(rem(300));
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(rem(0));
+    opacity: 1;
+  }
+}
+
+.anime-left-to-right-out {
+  animation: anime-left-to-right-out 350ms ease-in-out forwards;
+}
+
+.anime-left-to-right-in {
+  animation: anime-left-to-right-in 350ms ease-in-out forwards;
+}
+
+.anime-right-to-left-out {
+  animation: anime-right-to-left-out 350ms ease-in-out forwards;
+}
+
+.anime-right-to-left-in {
+  animation: anime-right-to-left-in 350ms ease-in-out forwards;
+}

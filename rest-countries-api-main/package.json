@@ -1,0 +1,37 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0",
+    "autoprefixer": "^10.4.13",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.21",
+    "postcss-custom-properties": "^12.1.11",
+    "postcss-opacity": "^5.0.0",
+    "postcss-sorting": "^8.0.1",
+    "prettier": "^2.8.3",
+    "sass": "^1.57.1",
+    "stylelint": "^14.16.1",
+    "stylelint-color-format": "^1.1.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-rational-order-fix": "^0.1.9",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "stylelint-find-new-rules": "^4.0.0",
+    "stylelint-group-selectors": "^1.0.9",
+    "stylelint-high-performance-animation": "^1.7.0",
+    "stylelint-order": "^6.0.1",
+    "stylelint-scss": "^4.3.0",
+    "stylelint-selector-no-empty": "^1.0.9",
+    "stylelint-suitcss": "^5.0.0",
+    "stylelint-use-logical-spec": "^4.1.0"
+  }
+}

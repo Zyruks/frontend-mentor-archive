@@ -1,0 +1,94 @@
+@use "../abstract" as *;
+@use "sass:map";
+
+:where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+:where(input[type="file"])::file-selector-button {
+  --accent: #{map.get($buttons, "accent")};
+  --text: #{map.get($buttons, "text")};
+  --bg: #{map.get($buttons, "bg")};
+  --input-well: #{map.get($buttons, "input-well")};
+  --padding-inline: #{map.get($buttons, "padding-inline")};
+  --padding-block: #{map.get($buttons, "padding-block")};
+  --border-color: #{map.get($buttons, "border-color")};
+  --highlight-size: #{map.get($buttons, "highlight-size")};
+  --highlight: #{map.get($buttons, "highlight")};
+  --text-shadow: #{map.get($buttons, "text-shadow")};
+  --icon-size: #{map.get($buttons, "icon-size")};
+  --icon-color: var(--accent);
+  --shadow-color: 220 3% 15%;
+  --shadow-1: #{map.get($buttons, "shadow-1")};
+  --shadow-2: #{map.get($buttons, "shadow-2")}, #{map.get($buttons, "shadow-3")};
+  --shadow-depth: #{map.get($buttons, "shadow-depth")};
+  --transition-motion-reduce: ;
+  --transition-motion-ok: opacity var(--duration-300) var(--ease-in-out);
+  --transition: var(--transition-motion-reduce);
+
+  border-radius: #{map.get($buttons, "border-radius")};
+
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(button, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]),
+  :where(input[type="file"])::file-selector-button {
+    --transition: var(--transition-motion-ok);
+  }
+}
+
+:where(button, input[type="button"], input[type="submit"], input[type="reset"]),
+:where(input[type="file"])::file-selector-button {
+  display: inline-flex;
+  gap: 1ch;
+  align-items: center;
+  justify-content: center;
+  border: #{map.get($buttons, "border-width")} #{map.get(
+      $buttons,
+      "border-style"
+    )} var(--border-color);
+
+  color: var(--text);
+
+  font-weight: #{map.get($buttons, "font-weight")};
+
+  font-size: #{map.get($buttons, "mobile-font-size") !important};
+
+  @include breakpoint(medium) {
+    font-size: #{map.get($buttons, "font-size") !important};
+  }
+  text-align: center;
+  text-shadow: var(--text-shadow);
+
+  background: var(--bg);
+  box-shadow: var(--shadow-2), var(--shadow-depth),
+    0 0 0 var(--highlight-size) var(--highlight);
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  user-select: none;
+  touch-action: manipulation;
+  padding-block: var(--padding-block);
+  padding-inline: var(--padding-inline);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* active state */
+:where(button:active) {
+  background-color: var(--clr-primary-500);
+}
+
+:where(button:active > img) {
+  filter: brightness(200%);
+}
+
+/* style for previous and next button */
+:where(button[data-action="prev"]) {
+  border-radius: #{map.get($prev-btn, "border-radius")};
+}
+
+:where(button[data-action="next"]) {
+  border-radius: #{map.get($next-btn, "border-radius")};
+}

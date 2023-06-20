@@ -1,0 +1,60 @@
+@use "../abstract/" as *;
+
+/* ******************* *\
+? #btn component
+\* ******************* */
+.btn {
+  border: rem(2) solid var(--white);
+  border-radius: rem(40);
+
+  background: var(--white);
+
+  transition: border 400ms ease-in-out, background 400ms ease-in-out,
+    color 200ms ease-in-out;
+
+  padding-inline: rem(15);
+  padding-block-start: rem(13);
+  padding-block-end: rem(10);
+
+  min-inline-size: rem(150);
+
+  &:hover {
+    border: rem(2) solid rgba(0, 0, 0, 0%);
+
+    background: rgba(255, 255, 255, 30%);
+  }
+}
+
+.btn--inverted {
+  border-color: var(--white);
+
+  background-color: rgba(255, 255, 255, 0%);
+
+  &:hover {
+    background-color: var(--white);
+  }
+}
+
+.btn--sign-up {
+  @include breakpoint-down(medium) {
+    border: rem(2) solid rgba(255, 255, 255, 100%);
+
+    background: linear-gradient(
+      90deg,
+      var(--mobile-gradient-one) 0%,
+      var(--mobile-gradient-two) 100%
+    );
+
+    &:hover {
+      border: rem(2) solid var(--cta-text);
+    }
+  }
+
+  @include breakpoint(large) {
+    background: var(--white);
+  }
+}
+
+/* ******************* *\
+? #btn component end
+\* ******************* */

@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+.flex-group {
+  display: flex;
+
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  column-gap: var(--flex-column-gap, $flex-group-gap);
+  row-gap: var(--flex-row-gap, calc($flex-group-gap / 2));
+}
+
+.flex-group.mx-auto {
+  justify-content: center;
+}

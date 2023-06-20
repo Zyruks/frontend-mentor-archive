@@ -1,0 +1,29 @@
+@use "../abstract/" as *;
+
+/* Creating a class for each color and shade. */
+@each $color, $shades in $colors {
+  @each $shade, $value in $shades {
+    .text-#{$color}-#{$shade} {
+      color: var(--clr-#{$color}-#{$shade});
+    }
+    .bg-#{$color}-#{$shade} {
+      background-color: var(--clr-#{$color}-#{$shade});
+    }
+  }
+}
+
+@each $position, $value in $block-positions {
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      @if ($position == "") {
+        .border-#{$color}-#{$shade} {
+          border-#{$position}: rem(5) solid var(--clr-#{$color}-#{$shade});
+        }
+      } @else {
+        .border-#{$position}-#{$color}-#{$shade} {
+          border-#{$position}: rem(2) solid var(--clr-#{$color}-#{$shade});
+        }
+      }
+    }
+  }
+}

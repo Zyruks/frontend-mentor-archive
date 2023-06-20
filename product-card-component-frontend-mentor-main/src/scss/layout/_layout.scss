@@ -1,0 +1,26 @@
+@use "../abstract" as *;
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+
+  background-color: var(--background-color);
+
+  inline-size: 100vw;
+  block-size: 100vh;
+}
+
+.attribution {
+  inline-size: 100%;
+  @include breakpoint(x-large) {
+    position: absolute;
+    inset-block-end: 10%;
+  }
+
+  text-align: center;
+}

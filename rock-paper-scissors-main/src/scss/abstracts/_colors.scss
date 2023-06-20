@@ -1,0 +1,30 @@
+@use "sass:map" as *;
+
+$colors: (
+  "primary": (
+    400: hsl(214deg, 47%, 23%),
+    500: hsl(237deg, 49%, 15%),
+  ),
+  "accent": (
+    400: hsl(39deg, 89%, 49%),
+    500: hsl(40deg, 84%, 53%),
+    600: hsl(230deg, 89%, 62%),
+    700: hsl(230deg, 89%, 65%),
+    800: hsl(349deg, 71%, 52%),
+    900: hsl(349deg, 70%, 56%),
+  ),
+  "neutral": (
+    100: hsl(0deg, 0%, 100%),
+    400: hsl(229deg, 64%, 46%),
+    500: hsl(217deg, 16%, 45%),
+    600: hsl(229deg, 25%, 31%),
+  ),
+);
+$gradients: (
+  "background":
+    linear-gradient(
+      180deg,
+      map-get($colors, "primary", 400),
+      map-get($colors, "primary", 500)
+    ),
+);

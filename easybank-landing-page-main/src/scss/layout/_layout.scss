@@ -1,0 +1,131 @@
+@use "../abstract" as *;
+
+/**
+ * WRAPPER
+ * Sets a max width, adds a consistent gutter and horizontally
+ * centers the contents
+ */
+
+.wrapper {
+  inline-size: 95vw;
+
+  max-inline-size: rem(1300);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+
+  // position: relative;
+}
+
+.stack > * + * {
+  margin-block-start: var(--space, 1.25rem);
+}
+
+.blog .stack {
+  --space: 0.5rem;
+}
+
+.total-alignment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint(medium) {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.grid-grow {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100% / 1, max(rem(200), 100% / 5)), 1fr)
+  );
+  align-items: center;
+  justify-items: center;
+}
+
+.even-columns {
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  @include breakpoint(medium) {
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+  }
+}
+
+.first-column {
+  grid-column: 1/2;
+}
+
+/* features */
+.features {
+  position: relative;
+  @include breakpoint(medium) {
+    margin-block-start: rem(-170);
+
+    z-index: 1;
+  }
+  @include breakpoint(large) {
+    margin-block-start: rem(-240);
+  }
+}
+
+/* footer */
+
+.footer .wrapper {
+  row-gap: rem(36);
+
+  justify-items: center;
+
+  @include breakpoint(medium) {
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: minmax(min(100% / 1, max(rem(100), 100% / 4)), 0.5fr) 0.5fr 1fr;
+
+    column-gap: rem(40);
+  }
+}
+
+.footer-logo {
+  @include breakpoint(medium) {
+    grid-column: 1/2;
+    justify-self: flex-start;
+  }
+}
+
+.social {
+  @include breakpoint(medium) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    justify-self: flex-start;
+  }
+}
+
+.secondary-nav {
+  text-align: center;
+
+  @include breakpoint(medium) {
+    grid-row: 1/3;
+    grid-template-columns: 1fr 1fr;
+    justify-self: flex-start;
+
+    white-space: nowrap;
+
+    text-align: start;
+  }
+}
+
+.footer-btn,
+.copyright {
+  @include breakpoint(medium) {
+    justify-self: flex-end;
+
+    white-space: nowrap;
+  }
+}

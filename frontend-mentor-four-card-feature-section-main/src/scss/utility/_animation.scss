@@ -1,0 +1,92 @@
+@use "../abstract/" as *;
+
+@keyframes key-left-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(rem(-50));
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes key-right-to-left {
+  0% {
+    opacity: 0;
+    transform: translateX(rem(50));
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes key-top-to-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(rem(-50));
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+@keyframes key-bottom-to-top {
+  0% {
+    opacity: 0;
+    transform: translateY(rem(50));
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  animation: key-left-to-right 1s ease-in-out forwards;
+}
+
+h1:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+.primary-text p {
+  animation: key-left-to-right 1s ease-in-out forwards;
+  animation-delay: 500ms;
+}
+
+.card {
+  animation: key-top-to-bottom 1.5s ease-in-out forwards;
+  &:nth-child(2) {
+    animation-delay: 200ms;
+  }
+  &:nth-child(3) {
+    animation-delay: 400ms;
+  }
+  &:nth-child(4) {
+    animation-delay: 600ms;
+  }
+}
+
+.card {
+  @include breakpoint(large) {
+    &:nth-child(1) {
+      animation: key-left-to-right 1s ease-in-out forwards;
+    }
+    &:nth-child(2) {
+      animation: key-top-to-bottom 1s ease-in-out forwards;
+    }
+    &:nth-child(3) {
+      animation: key-bottom-to-top 1s ease-in-out forwards;
+    }
+    &:nth-child(4) {
+      animation: key-right-to-left 1s ease-in-out forwards;
+    }
+  }
+}

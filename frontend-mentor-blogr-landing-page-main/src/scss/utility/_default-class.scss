@@ -1,0 +1,9 @@
+@use "../abstract/" as *;
+
+.dp-flex {
+  display: flex;
+}
+
+.tf-rotate-180 {
+  transform: rotate(-180deg);
+}

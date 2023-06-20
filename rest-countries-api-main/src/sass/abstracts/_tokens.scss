@@ -1,0 +1,174 @@
+@use "colors" as *;
+@use "functions" as *;
+@use "sizes" as *;
+@use "typography" as *;
+
+/* Move this to other file */
+
+// border-radius
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+
+// shadows
+$box-shadow-1: 0 $size-1 $size-4 rgb(0 0 0 / 10%);
+$box-shadow-1-dark: 0 $size-1 $size-4 rgb(255 255 255 / 10%);
+$box-shadow-2: 0 $size-1 $size-4 rgb(0 0 0 / 15%);
+
+// layout
+$grid-gap: $size-12;
+$flex-group-gap: $size-4;
+$hero-padding-block: clamp(15rem, 15vh, 20rem);
+$section-padding-block: clamp(3rem, 10vh, 7rem);
+$section-inline-padding: $size-4;
+$card-body-padding: $size-8;
+$container-min-margin-inline: $size-4;
+$container-max-width: 80rem;
+
+// ?colors
+
+// ? contextual color tokens
+$color-neutral-100: var(--color-neutral-100);
+$color-neutral-200: var(--color-neutral-200);
+$color-neutral-300: var(--color-neutral-300);
+$color-neutral-400: var(--color-neutral-400);
+$color-neutral-700: var(--color-neutral-700);
+$color-neutral-800: var(--color-neutral-800);
+$color-neutral-900: var(--color-neutral-900);
+$color-text-light: $color-neutral-800;
+$color-secondary-text-color-light: $color-neutral-700;
+$color-text-dark: $color-neutral-100;
+$color-secondary-text-color-dark: $color-neutral-200;
+$color-background-light: $color-neutral-100;
+$color-background-dark: $color-neutral-700;
+
+// Need to create a light dark for this two
+$color-text-interactive-default: $color-neutral-400;
+$color-text-interactive-hover: $color-neutral-800;
+$letter-spacing-loose: 0.16em;
+
+// ? body - light
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.5;
+$body-font-weight: $font-weight-default;
+$body-text-color-light: $color-text-light;
+$body-background-color-light: $color-background-light;
+
+// ? body - dark
+$body-text-color-dark: $color-text-dark;
+$body-background-color-dark: $color-background-dark;
+
+// ? general
+$link-color: none;
+$link-color-hover: none;
+$heading-font-family: $font-family-accent;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1;
+$heading-text-transform: uppercase;
+
+// ? header
+$header-background-color-light: $color-neutral-100 ;
+$header-background-color-dark: $color-neutral-800  ;
+
+// ? heading light
+$heading-color-light: $body-text-color-light;
+
+// ? heading dark
+$heading-color-dark: $body-text-color-dark;
+
+// ? COMPONENTS ---------------------------------------
+
+// ? Button Change Color Scheme
+$dark-light-button-padding-inline-start: $size-11;
+$dark-light-button-padding-inline-end: $size-8;
+$dark-light-button-background-color: transparent;
+$dark-light-button-font-weight: $font-weight-semi-bold;
+$dark-light-button-font-size: $font-size-600;
+$dark-light-button-text-color: var(--text-color);
+$dark-light-button-border: rem(2) solid transparent;
+$dark-light-button-position: relative;
+
+// ? Dark Light Button Children
+$dark-light-button-svg-transform-origin: rem(250) center ;
+$dark-light-button-svg-position: absolute ;
+$dark-light-button-svg-transition: transform 900ms ease-in-out ;
+$dark-light-button-svg-fill: var(--icon-color) ;
+$dark-light-button-svg-stroke: var(--icon-color) ;
+$dark-light-button-svg-inset-inline-start: 10%;
+$dark-light-button-svg-inset-block: 0;
+$dark-light-button-svg-margin-block: auto;
+$dark-light-button-svg-inline-size: $size-5;
+
+// ? Search bar
+$search-border-color: transparent ;
+$search-border-radius: $border-radius-1 ;
+$search-color: var(--text-color);
+$search-font-weight: $font-weight-semi-bold;
+$search-letter-spacing: rem(-0.3);
+$search-background-color: var(--bg-secondary-color);
+$search-outline-color: transparent;
+$search-box-shadow: $box-shadow-1;
+$search-padding-block: $size-3;
+$search-padding-inline-start: $size-10;
+$search-inline-size: 100%;
+$search-medium-inline-size: 140%;
+$search-max-inline-size: 24rem;
+
+// ? ==> Search bar icon
+$search-icon-position: absolute;
+$search-icon-inline-size: $size-8;
+$search-icon-z-index: 1;
+$search-icon-margin-block: auto;
+$search-icon-inset-inline-start: $size-2;
+$search-icon-inset-block: 0 ;
+
+// ? Selector Component
+$selector-border-color: transparent;
+$selector-border-radius: $border-radius-1;
+$selector-color: var(--text-color);
+$selector-font-weight: $font-weight-semi-bold;
+$selector-font-size: $font-size-400;
+$selector-background-color: var(--bg-secondary-color);
+$selector-outline-color: transparent;
+$selector-box-shadow: $box-shadow-1;
+$selector-appearance: none;
+$selector-padding-inline-start: $size-6;
+$selector-padding-inline-end: $size-12;
+$selector-padding-block: $size-4;
+
+// ? Region-container[selector] pseudo-elements
+$region-container-position: absolute;
+$region-container-z-index: 1;
+$region-container-display: block;
+$region-container-inset-inline-end: rem(20);
+$region-container-inset-block: 0;
+$region-container-margin-block: auto;
+$region-container-inline-size: rem(15);
+$region-container-block-size: rem(15);
+
+// ? Selector custom options component
+$selector-custom-options-position: absolute;
+$selector-custom-options-border-radius: $border-radius-1;
+$selector-custom-options-overflow: hidden;
+$selector-custom-options-font-weight: $font-weight-semi-bold;
+$selector-custom-options-font-size: $font-size-400;
+$selector-custom-options-background-color: var(--bg-secondary-color);
+$selector-custom-options-box-shadow: $box-shadow-1;
+$selector-custom-options-inset-inline: 0;
+$selector-custom-options-margin-block-start: $size-2;
+
+// ? card component
+$card-border-radius: $border-radius-1;
+$card-overflow: hidden;
+$card-font-weight: $font-weight-default;
+$card-background-color: var(--bg-secondary-color);
+$card-box-shadow: $box-shadow-2;
+$card-padding-block-end: $size-4;
+$card__text-container-padding: $size-4;
+$card__text-container-padding-block-start: 0;
+$card__text-container-color: var(--text-secondary-color);
+$card__strong-color: var(--text-color);
+$card__strong-font-weight: $font-weight-semi-bold;
+$card-max-inline-size: rem(280);
+$card-hover-transform: scale(1.05);

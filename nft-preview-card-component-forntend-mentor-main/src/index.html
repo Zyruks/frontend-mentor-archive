@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- favicon responsive -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.webp"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.webp"
+    />
+    <!-- favicon responsive end-->
+
+    <title>Frontend Mentor | NFT Card Component</title>
+
+    <!-- Google Stuff -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+
+    <!-- Google Stuff -->
+
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Style end -->
+  </head>
+
+  <body>
+    <section role="main">
+      <dialog class="modal js-modal">
+        <span
+          class="material-symbols-outlined modal__close-btn js-modal__close-btn"
+        >
+          close
+        </span>
+        <img src="./assets/images/image-equilibrium-og.jpg" alt="" />
+      </dialog>
+      <div class="card">
+        <div class="card-img__wrapper js-card-img__wrapper">
+          <img
+            src="./assets/images/image-equilibrium-lg.webp"
+            alt="Equilibrium cube"
+            class="card__img"
+          />
+          <div class="hover">
+            <img
+              class="view"
+              src="./assets/images/icon-view.svg"
+              alt="View Icon"
+            />
+          </div>
+        </div>
+
+        <div class="card-text">
+          <h1 class="card-text__title">Equilibrium #3429</h1>
+          <p class="card-text__description">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+          <div class="card-text__sub-container">
+            <div class="text-align">
+              <img
+                src="./assets/images/icon-ethereum.svg"
+                alt="Ethereum Icon"
+              />
+              <span class="card-text__ethereum">0.041 ETH</span>
+            </div>
+            <div class="text-align">
+              <img src="./assets/images/icon-clock.svg" alt="Clock Icon" />
+              <span class="card-text__time">3 days left</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card__about">
+          <img
+            class="avatar"
+            src="./assets/images/image-avatar-lg.webp"
+            alt="avatar"
+          />
+          <span>Creation of <a href="#"> Jules Wyvern</a></span>
+        </div>
+      </div>
+    </section>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

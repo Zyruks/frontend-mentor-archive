@@ -1,0 +1,122 @@
+@use "../abstract/" as *;
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: rem(16);
+  border-radius: rem(26);
+
+  background: hsla(213deg, 20%, 18%, 100%); /* Old browsers */
+  /* stylelint-disable */
+  background: radial-gradient(
+    circle at 50% -40%,
+    hsla(216deg, 12%, 54%, 50%) 0%,
+    hsla(213deg, 20%, 18%, 100%) 30%,
+
+    rgb(23, 26, 29) 100%
+  );
+  /* stylelint-enable*/
+  background-repeat: no-repeat;
+  box-shadow: 0 0 rem(46) rem(-11) rgba(0, 0, 0, 10%);
+
+  animation: key-opacity-on 500ms ease-in-out;
+  block-size: rem(350);
+  min-inline-size: rem(320);
+  max-inline-size: rem(320);
+  @include breakpoint(large) {
+    min-inline-size: rem(380);
+    max-inline-size: rem(380);
+
+    block-size: rem(400);
+  }
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  justify-content: center;
+  border-radius: 100%;
+
+  background-color: var(--dark-blue);
+  inline-size: rem(45);
+}
+
+.review-icon {
+  padding: rem(15);
+
+  inline-size: rem(45);
+}
+
+.review__title {
+  margin: 0;
+  margin-block-start: rem(16);
+}
+
+.review__paragraph {
+  margin-block-start: rem(0);
+  margin-block-end: rem(20);
+}
+
+.review__score {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.score__item {
+  display: block;
+  align-items: center;
+  padding: rem(10) rem(15);
+  border: none;
+  border-radius: 100%;
+
+  background-color: var(--dark-blue);
+
+  &:hover {
+    color: var(--white);
+
+    background-color: var(--primary-color);
+  }
+  @include breakpoint(large) {
+    padding: rem(12) rem(18);
+  }
+}
+
+.score__item--active {
+  color: var(--white);
+
+  background-color: var(--light-grey);
+}
+
+.review__btn {
+  margin-block-end: rem(20);
+
+  padding: rem(12) rem(15);
+  border: none;
+  border-radius: rem(20);
+
+  background-color: var(--primary-color);
+
+  margin-block-start: rem(20);
+
+  inline-size: 100%;
+
+  &:hover {
+    color: var(--primary-color);
+
+    background-color: var(--white);
+  }
+}
+
+@keyframes key-opacity-on {
+  0% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}

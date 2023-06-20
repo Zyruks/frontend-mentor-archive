@@ -1,0 +1,133 @@
+@use "../abstract/" as *;
+
+.card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  justify-content: space-between;
+  padding: rem(36);
+  overflow: hidden;
+
+  background-color: var(--suv-bg);
+
+  &:nth-child(1) {
+    border-radius: rem(8) rem(8) 0 0;
+  }
+
+  &:nth-child(3) {
+    border-radius: 0 0 rem(8) rem(8);
+  }
+
+  @include breakpoint(large) {
+    &:nth-child(1) {
+      border-radius: rem(8) 0 0 rem(8);
+    }
+
+    &:nth-child(3) {
+      border-radius: 0 rem(8) rem(8) 0;
+    }
+
+    max-block-size: rem(500);
+  }
+}
+
+.card__img {
+  inline-size: rem(60);
+}
+
+.card__title {
+  margin-block-start: rem(16);
+}
+
+.card__description {
+  inline-size: 90%;
+
+  @include breakpoint(large) {
+    margin-block-end: rem(36);
+    inline-size: 85%;
+  }
+}
+
+.card__btn {
+  margin-block-end: rem(16);
+
+  padding: rem(14) rem(10);
+  border: rgba(0, 0, 0, 0%) solid rem(2);
+  border-radius: rem(24);
+
+  background-color: hsl(0deg, 0%, 100%);
+  inline-size: 60%;
+
+  transition: border 300ms ease-in-out, background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+
+  &:hover {
+    border: hsl(0deg, 0%, 100%) solid rem(2);
+
+    color: hsl(0deg, 0%, 100%);
+
+    background-color: rgba(0, 0, 0, 0%);
+    cursor: pointer;
+  }
+}
+
+.opacity-img {
+  animation: opacity 1s ease-in-out forwards;
+}
+
+/* Sedan Features */
+.card--sedan {
+  background-color: var(--sedans-bg);
+}
+
+.card__btn--sedan {
+  color: var(--sedans-bg);
+}
+
+.sedan-animation {
+  position: absolute;
+
+  display: none;
+  inline-size: rem(42);
+  inset-block-start: rem(46);
+  inset-inline-start: rem(54);
+}
+
+/* SUV Features */
+.card--suv {
+  background-color: var(--suv-bg);
+}
+
+.card__btn--suv {
+  color: var(--suv-bg);
+}
+
+.suv-animation {
+  position: absolute;
+
+  display: none;
+  inline-size: rem(42);
+  inset-block-start: rem(42);
+  inset-inline-start: rem(54);
+}
+
+/* LUXURY Features */
+.card--luxury {
+  background-color: var(--luxury-bg);
+}
+
+.card__btn--luxury {
+  color: var(--luxury-bg);
+}
+
+.luxury-animation {
+  position: absolute;
+
+  display: none;
+
+  inline-size: rem(42);
+  inset-block-start: rem(46);
+  inset-inline-start: rem(55);
+}

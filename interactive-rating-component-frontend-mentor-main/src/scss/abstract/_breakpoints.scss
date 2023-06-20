@@ -1,0 +1,28 @@
+/* 480px: Mobile, 768px: Tablets, 1200px: Desktops, 1201px: Large Screens */
+
+/* em units are best for breakpoints, rem have bugs on safari. 05/10/2022 */
+$breakpoints-up: (
+  "medium": 30.75em,
+  "large": 53.125em,
+  "x-large": 83.375em,
+);
+
+/* 479.98px: Mobile Max, 767.98px: Tablets Max, 1199.98px: Desktop Max */
+
+/* 0.2px difference that way no visual bug and problems with breakpoints-up */
+$breakpoints-down: (
+  "small": 27.5em,
+  "medium": 47.9988em,
+  "large": 74.9988em,
+);
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

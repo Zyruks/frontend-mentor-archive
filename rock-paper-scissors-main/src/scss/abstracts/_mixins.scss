@@ -1,0 +1,24 @@
+@use "breakpoints" as *;
+@use "functions" as *;
+@use "sass:map";
+@use "sass:meta";
+
+@mixin mq($size) {
+  @if (map.has-key($breakpoints, $size)) {
+    $breakpoint: getter($breakpoints, $size);
+
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if (meta.type-of($size) == number) {
+    @if (math.is-unitless($size)) {
+      @error "When using a number with @mq() make sure to include the unit";
+    } @else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error "the keyword #{$size} is not in the $breakpoints map";
+  }
+}

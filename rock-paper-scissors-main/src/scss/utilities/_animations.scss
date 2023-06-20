@@ -1,0 +1,69 @@
+@use "../abstracts/" as *;
+
+@keyframes anime-scale-up {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes anime-scale-down {
+  0% {
+    transform: scale(100%);
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.anime-scale-up {
+  animation: anime-scale-up 350ms ease-in-out forwards;
+}
+
+.anime-scale-down {
+  animation: anime-scale-down 350ms ease-in-out forwards;
+}
+
+.anime-out-of-sight {
+  animation: anime-out-of-sight 500ms ease-out forwards;
+}
+
+.anime-in-sight {
+  animation: anime-in-sight 500ms ease-out forwards;
+}
+
+@keyframes anime-out-of-sight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes anime-in-sight {
+  0% {
+    transform: translateX(200%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

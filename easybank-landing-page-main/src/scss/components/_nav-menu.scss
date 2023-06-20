@@ -1,0 +1,95 @@
+@use "../abstract" as *;
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    hsla(233deg, 26%, 24%, 80%) 0%,
+    hsla(233deg, 26%, 24%, 0%) 100%
+  );
+
+  transition: opacity 300ms ease-in-out;
+
+  content: "";
+  inline-size: 100vw;
+  block-size: 100vh;
+}
+
+.primary-nav {
+  position: absolute;
+  z-index: 1;
+
+  display: none;
+
+  border-radius: rem(10);
+
+  background-color: var(--clr-neutral-100);
+  inset-inline: 5%;
+
+  inset-block-start: rem(90);
+  padding-block: rem(40);
+  @include breakpoint(medium) {
+    position: static;
+
+    display: block;
+
+    background-color: none;
+    padding-block: rem(0);
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16);
+    align-items: center;
+    justify-content: center;
+    @include breakpoint(medium) {
+      flex-direction: row;
+    }
+  }
+}
+
+.primary-nav a {
+  position: relative;
+
+  &::after {
+    position: absolute;
+
+    border-image-source: linear-gradient(
+      to left,
+      var(--clr-primary-600),
+      var(--clr-primary-500)
+    );
+    border-image-slice: 1;
+
+    opacity: 0%;
+
+    transition: opacity 300ms ease-in-out;
+
+    content: "";
+    border-block-end: rem(3) solid;
+    inset-inline: 0;
+    inset-block-end: rem(-12);
+
+    @include breakpoint(medium) {
+      inset-block-end: rem(-37);
+    }
+  }
+
+  &:hover::after {
+    opacity: 100%;
+  }
+}
+
+.header-container {
+  z-index: 3;
+}
+
+.header-container .cta {
+  display: none;
+  @include breakpoint(medium) {
+    display: block;
+  }
+}

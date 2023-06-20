@@ -1,0 +1,62 @@
+@use "../abstract/" as *;
+
+@keyframes key-bottom-to-top {
+  0% {
+    transform: translateY(rem(30));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes key-top-to-bottom {
+  0% {
+    transform: translateY(rem(-30));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes key-left-to-right {
+  0% {
+    transform: translateX(rem(-30));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes key-open {
+  0% {
+    transform: scale(0) translateY(rem(-500));
+    opacity: 0%;
+  }
+
+  100% {
+    transform: scale(1) translateY(rem(-100));
+    opacity: 100%;
+  }
+}
+
+@keyframes key-close {
+  0% {
+    transform: scale(1) translateY(rem(-300));
+
+    opacity: 0%;
+  }
+
+  100% {
+    transform: scale(0) translateY(rem(-800));
+    opacity: 100%;
+  }
+}

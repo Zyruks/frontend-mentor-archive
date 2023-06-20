@@ -1,0 +1,79 @@
+@use "../abstract" as *;
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-family: var(--ff-body);
+}
+
+body {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-300);
+  font-size: var(--fluid-fs-300);
+
+  line-height: var(--lh-700);
+
+  /* background style */
+  background-color: var(--clr-neutral-100);
+  background-image: url("../assets/svg/pattern-curve.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+main {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  align-content: center;
+  @include breakpoint(medium) {
+    align-content: center;
+    justify-content: center;
+  }
+  block-size: 100vh;
+
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-700);
+  font-family: var(--ff-headings);
+  line-height: var(--lh-500);
+}
+
+h1 {
+  font-size: var(--fluid-fs-900);
+}
+
+h2 {
+  font-size: var(--fluid-fs-800);
+}
+
+h3 {
+  color: var(--clr-primary-400);
+  font-size: var(--fluid-fs-200);
+  @include breakpoint(medium) {
+    font-size: var(--fluid-fs-200);
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+a,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}

@@ -1,0 +1,33 @@
+@use "functions" as *;
+$sizes: (
+  "none": 0,
+  "100": clamp(0.25rem, calc(0.16rem + 0.39vw), 0.5rem),
+  "200": clamp(0.5rem, calc(0.32rem + 0.78vw), 1rem),
+  "300": clamp(0.75rem, calc(0.48rem + 1.17vw), 1.5rem),
+  "400": clamp(1rem, calc(0.63rem + 1.56vw), 2rem),
+  "500": clamp(1.5rem, calc(0.95rem + 2.34vw), 3rem),
+  "600": clamp(2rem, calc(1.27rem + 3.12vw), 4rem),
+  "700": clamp(3rem, calc(1.9rem + 4.68vw), 6rem),
+  "800": clamp(4rem, calc(2.54rem + 6.24vw), 8rem),
+  "900": clamp(6rem, calc(3.8rem + 9.37vw), 12rem),
+  "auto": auto,
+);
+
+$positions: (
+  "padding": (
+    "block",
+    "block-start",
+    "block-end",
+    "inline",
+    "inline-start",
+    "inline-end",
+  ),
+  "margin": (
+    "block",
+    "block-start",
+    "block-end",
+    "inline",
+    "inline-start",
+    "inline-end",
+  ),
+);

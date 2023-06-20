@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Loopstudios Landing Page</title>
+    <meta name="title" content="Change Title here" />
+    <meta
+      name="description"
+      content="This is a Challenge from frontend-mentor"
+    />
+    <meta name="keywords" content="frontend mentor" />
+    <meta name="robots" content="index, follow" />
+
+    <meta name="language" content="English" />
+
+    <!-- favicon responsive -->
+    <link rel="shortcut icon" href="favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="./assets/favicons/favicon-48x48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="228x228"
+      href="./assets/favicons/coast-228x228.png"
+    />
+
+    <!-- favicon responsive end-->
+
+    <!-- google stuff -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google stuff end-->
+
+    <!-- vendors -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css" />
+    <!-- vendors end -->
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- styles end -->
+  </head>
+
+  <body>
+    <!--#header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-container">
+          <img
+            src="./assets/images/logo.svg"
+            class="logo js-logo"
+            alt="Logotype"
+          />
+          <button
+            class="burger js-burger"
+            onclick="menuOpen()"
+            aria-label="Main Menu"
+          >
+            <svg class="burger__svg" viewbox="0 0 100 100">
+              <path
+                class="burger__line burger__line1"
+                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+              />
+              <path class="burger__line burger__line2" d="M 20,50 H 80" />
+              <path
+                class="burger__line burger__line3"
+                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+              />
+            </svg>
+          </button>
+        </div>
+        <!-- #menu -->
+        <nav class="nav-content js-nav nav-close | text-neutral-100 font-nav">
+          <ul class="menu">
+            <li class="menu__item hover-state">About</li>
+            <li class="menu__item hover-state">Careers</li>
+            <li class="menu__item hover-state">Events</li>
+            <li class="menu__item hover-state">Products</li>
+            <li class="menu__item hover-state">Support</li>
+          </ul>
+        </nav>
+
+        <!-- menu end -->
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- main -->
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="fs-primary-heading text-neutral-100">
+            Immersive Experiences that deliver
+          </h1>
+        </div>
+      </section>
+      <section class="content-info | margin-block-900">
+        <div class="container | padding-inline-500">
+          <picture>
+            <source
+              srcset="./assets/images/desktop/image-interactive.webp"
+              media="(min-width: 990px)"
+            />
+            <source
+              srcset="./assets/images/desktop/image-interactive.jpg"
+              media="(min-width: 990px)"
+            />
+            <source
+              srcset="./assets/images/desktop/image-interactive.webp"
+              media="(max-width: 989.99px)"
+            />
+            <img
+              src="./assets/images/mobile/image-interactive.jpg"
+              alt="Guy playing with VR"
+              class="images"
+            />
+          </picture>
+          <div class="text-container | margin-block-start-300">
+            <h2 class="fs-secondary-heading padding-block-300">
+              The leader in interactive VR
+            </h2>
+            <p class="fs-body text-neutral-600">
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              though digital experiences that bind to their brand.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="gallery | margin-block-700">
+        <div class="container">
+          <h2 class="fs-secondary-heading | margin-block-300">Our Creation</h2>
+          <div class="gallery-grid | margin-block-600">
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                Deep <br />
+                Earth
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-deep-earth.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-deep-earth.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-deep-earth.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-deep-earth.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                Night <br />
+                Arcade
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-night-arcade.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-night-arcade.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-night-arcade.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-night-arcade.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                Soccer <br />
+                Team VR
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-soccer-team.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-soccer-team.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-soccer-team.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-soccer-team.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                The <br />
+                Grid
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-grid.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-grid.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-grid.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-grid.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                From Up <br />
+                Above VR
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-from-above.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-from-above.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-from-above.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-from-above.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                Pocket <br />
+                Borealis
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-pocket-borealis.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-pocket-borealis.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-pocket-borealis.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-pocket-borealis.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                The <br />
+                Curiosity
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-curiosity.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-curiosity.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-curiosity.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-curiosity.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+            <div class="grid-item | margin-block-450">
+              <div class="gradient-blend"></div>
+              <h3 class="image-text | text-neutral-100">
+                Make It <br />
+                Fisheye
+              </h3>
+              <picture>
+                <source
+                  srcset="./assets/images/desktop/image-fisheye.webp"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/desktop/image-fisheye.jpg"
+                  media="(min-width: 768px)"
+                />
+                <source
+                  srcset="./assets/images/mobile/image-fisheye.webp"
+                  media="(max-width: 768.99px)"
+                />
+                <img
+                  src="./assets/images/mobile/image-fisheye.jpg"
+                  alt="Earth Picture"
+                  class="grid-images"
+                />
+              </picture>
+            </div>
+          </div>
+          <button class="btn">See All</button>
+        </div>
+      </section>
+    </main>
+    <!-- main end -->
+    <footer class="footer padding-block-start-700 padding-block-end-700">
+      <div class="container">
+        <img src="./assets/images/logo.svg" alt="logo footer" />
+        <nav class="footer-nav">
+          <ul class="footer-list">
+            <li>
+              <a href="#" class="hover-state fs-400 text-neutral-100 fw-600"
+                >About</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover-state fs-400 text-neutral-100 fw-600"
+                >Careers</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover-state fs-400 text-neutral-100 fw-600"
+                >Events</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover-state fs-400 text-neutral-100 fw-600"
+                >Products</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover-state fs-400 text-neutral-100 fw-600"
+                >Support</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="social">
+          <div class="hover-state">
+            <img src="./assets/images/icon-facebook.svg" alt="facebook" />
+          </div>
+          <div class="hover-state">
+            <img src="./assets/images/icon-twitter.svg" alt="Twitter" />
+          </div>
+          <div class="hover-state">
+            <img src="./assets/images/icon-pinterest.svg" alt="Pinterest" />
+          </div>
+          <div class="hover-state">
+            <img src="./assets/images/icon-instagram.svg" alt="Instagram" />
+          </div>
+        </div>
+        <div class="div">
+          <h4 class="text-neutral-400">
+            &copy; 2022| Loopstudios. All rights reserved.
+          </h4>
+        </div>
+      </div>
+      <div class="attribution text-neutral-100">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/Zyruks">Zyruks</a>.
+      </div>
+    </footer>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+@use "../functions" as *;
+/* fonts */
+$font-families: (
+  "headings": "Inter",
+  "body": "Inter",
+);
+
+$font-sizes: (
+  "classic": (
+    "100": 0.25rem,
+    "200": 0.5rem,
+    "300": 0.75rem,
+    "400": 1rem,
+    "450": 1.125rem,
+    "500": 1.5rem,
+    "600": 2rem,
+    "700": 2.5rem,
+    "800": 3rem,
+    "900": 4rem,
+  ),
+  "fluid": (
+    "100": clamp(0.94rem, calc(0.91rem + 0.12vw), 1.02rem),
+    "200": clamp(1.13rem, calc(1.08rem + 0.23vw), 1.28rem),
+    "300": clamp(1.35rem, calc(1.27rem + 0.37vw), 1.6rem),
+    "400": clamp(1.63rem, calc(1.49rem + 0.56vw), 2rem),
+  ),
+);
+
+$font-weights: (
+  "300": 300,
+  "400": 500,
+  "700": 700,
+);
+
+$line-heights: (
+  "400": 1,
+  "500": 1.1,
+  "600": 1.5,
+  "700": 1.6,
+  "800": 1.8,
+  "900": 2,
+);
+
+$text-align: ("start", "end", "center", "justify");
+
+$letter-spacings: (
+  "extra-tight": rem(-2),
+  "tight": rem(-1),
+  "loose": rem(1),
+);
+/* fonts end */

@@ -1,0 +1,33 @@
+@use "functions" as *;
+$sizes: (
+  "none": 0,
+  "100": em(4),
+  "200": em(8),
+  "300": em(12),
+  "400": em(16),
+  "450": em(24),
+  "500": em(32),
+  "600": em(48),
+  "700": em(64),
+  "800": em(80),
+  "900": em(96),
+);
+
+$positions: (
+  "padding": (
+    "block",
+    "block-start",
+    "block-end",
+    "inline",
+    "inline-start",
+    "inline-end",
+  ),
+  "margin": (
+    "block",
+    "block-start",
+    "block-end",
+    "inline",
+    "inline-start",
+    "inline-end",
+  ),
+);

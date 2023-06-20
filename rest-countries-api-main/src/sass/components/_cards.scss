@@ -1,0 +1,48 @@
+@use "../abstracts/" as *;
+
+.card {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  border-radius: $card-border-radius;
+  overflow: $card-overflow;
+
+  max-inline-size: $card-max-inline-size;
+
+  font-weight: $card-font-weight;
+
+  background-color: $card-background-color;
+
+  box-shadow: $card-box-shadow;
+  cursor: pointer;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+  transition-property: color, background-color, transform;
+
+  padding-block-end: $card-padding-block-end;
+
+  img {
+
+    inline-size: 100%;
+    block-size: 100%;
+    aspect-ratio: 2 / 1;
+  }
+
+  .text-container {
+    --flow-spacer: 0.3rem;
+    padding: $card__text-container-padding;
+    padding-block-start: $card__text-container-padding-block-start;
+
+    color: $card__text-container-color;
+  }
+
+  strong {
+    color: $card__strong-color;
+    font-weight: $card__strong-font-weight;
+  }
+
+  &:hover,
+  &:focus-within {
+    transform: $card-hover-transform;
+  }
+}

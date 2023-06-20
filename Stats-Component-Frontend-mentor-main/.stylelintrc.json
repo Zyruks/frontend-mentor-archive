@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "./stylelint-personal-config/stylelint-config-kuzenshi",
+    "stylelint-config-prettier"
+  ]
+}

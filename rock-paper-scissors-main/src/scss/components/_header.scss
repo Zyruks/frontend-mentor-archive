@@ -1,0 +1,37 @@
+@use "../abstracts/" as *;
+
+.header {
+  align-items: center;
+  justify-content: space-between;
+  border: rem(3) solid var(--clr-neutral-500);
+  border-radius: rem(10);
+  inline-size: 100%;
+  max-inline-size: rem(480);
+  margin-inline: auto;
+  padding-inline: rem(16);
+  padding-block: rem(8);
+  block-size: rem(100);
+
+  @include mq(large) {
+    max-inline-size: rem(600);
+    block-size: rem(120);
+  }
+
+  .score-container {
+    position: relative;
+
+    border-radius: rem(4);
+    overflow: hidden;
+
+    text-align: center;
+    padding-inline: rem(25);
+    padding-block: rem(6);
+  }
+}
+
+.old-score {
+  position: absolute;
+  inset-inline: 0;
+
+  transform: translateX(200%);
+}

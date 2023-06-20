@@ -1,0 +1,105 @@
+@use "../abstract/" as *;
+
+.footer {
+  position: relative;
+  padding-inline: 5%;
+
+  background-color: var(--clr-neutral-900);
+  @include breakpoint(x-large) {
+    padding-inline: 5%;
+  }
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-600);
+  align-items: center;
+  justify-content: center;
+  @include breakpoint(large) {
+    flex-flow: row wrap;
+    gap: var(--size-500);
+    justify-content: space-between;
+  }
+
+  img {
+    inline-size: 40%;
+
+    max-inline-size: rem(200);
+  }
+}
+
+.footer-nav {
+  inline-size: 60%;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-500);
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  @include breakpoint(large) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  li a {
+    position: relative;
+
+    &::after {
+      inset-inline-start: 15%;
+      @include breakpoint(large) {
+        inset-inline-start: 25%;
+      }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  gap: var(--size-400);
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+
+  .hover-state {
+    position: relative;
+
+    img {
+      inline-size: 100%;
+    }
+
+    cursor: pointer;
+
+    &::after {
+      inset-inline-start: 15%;
+      @include breakpoint(large) {
+        inset-inline-start: 25%;
+      }
+    }
+  }
+  @include breakpoint(large) {
+    justify-content: flex-start;
+    inline-size: 60%;
+  }
+}
+
+.attribution {
+  position: absolute;
+  inset-block-end: rem(5);
+  inset-inline: 0;
+
+  text-align: center;
+
+  a {
+    color: var(--clr-neutral-600);
+
+    transition: color 300ms ease-in-out;
+
+    &:hover {
+      color: var(--clr-neutral-100);
+    }
+  }
+}

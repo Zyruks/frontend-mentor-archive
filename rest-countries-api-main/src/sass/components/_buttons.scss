@@ -1,0 +1,93 @@
+@use "../abstracts/" as *;
+
+.button {
+  border-color: transparent;
+  border-radius: rem(2);
+
+  color: var(--text-color);
+  font-size: $font-size-300;
+
+  background-color: var(--bg-secondary-color);
+  box-shadow: $box-shadow-1;
+
+  transition-timing-function: ease-in-out;
+  transition-duration: 300ms;
+  transition-property: border background-color;
+
+  padding-block: $size-1;
+  padding-inline: $size-6;
+
+  &:hover {
+    border: rem(2) solid var(--bg-secondary-color);
+
+    background-color: var(--bg-color);
+  }
+
+  @include mq(large) {
+    font-size: $font-size-400;
+  }
+}
+
+.btn[data-type="dark-light"] {
+  position: $dark-light-button-position;
+
+  border: $dark-light-button-border;
+
+  overflow: hidden;
+
+  color: $dark-light-button-text-color;
+  font-weight: $dark-light-button-font-weight;
+  font-size: $dark-light-button-font-size;
+
+  background-color: $dark-light-button-background-color;
+
+  padding-inline-start: $dark-light-button-padding-inline-start;
+  padding-inline-end: $dark-light-button-padding-inline-end;
+
+  @include mq(medium) {
+    overflow: visible;
+  }
+
+  .mode-icon {
+    --icon-color: var(--text-color);
+    position: $dark-light-button-svg-position;
+
+    transform-origin: $dark-light-button-svg-transform-origin;
+
+    transition: $dark-light-button-svg-transition;
+
+    fill: $dark-light-button-svg-fill;
+    stroke: $dark-light-button-svg-stroke;
+
+    inset-inline-start: $dark-light-button-svg-inset-inline-start;
+    inset-block: $dark-light-button-svg-inset-block;
+    margin-block: $dark-light-button-svg-margin-block;
+    inline-size: $dark-light-button-svg-inline-size;
+  }
+
+  span {
+    transition: opacity 600ms ease-in-out;
+  }
+}
+
+.moon-icon {
+  transform: rotate(var(--rotate, 0));
+
+  @media screen and (prefers-color-scheme: light) {
+    --rotate: 180deg;
+    opacity: 0;
+  }
+}
+
+.sun-icon {
+  --rotate: 180deg;
+  transform: rotate(var(--rotate, 0));
+
+  @media screen and (prefers-color-scheme: dark) {
+    opacity: 0;
+  }
+
+  @media screen and (prefers-color-scheme: light) {
+    --rotate: 0;
+  }
+}

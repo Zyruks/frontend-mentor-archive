@@ -1,0 +1,45 @@
+@use "../abstract" as *;
+
+.header-container {
+  font-size: var(--fluid-fs-600);
+
+  @include breakpoint(medium) {
+    font-size: var(--fluid-fs-300);
+  }
+}
+
+.primary-nav {
+  font-weight: 400;
+
+  font-size: var(--fluid-fs-500);
+
+  @include breakpoint(medium) {
+    color: var(--clr-neutral-400);
+    font-size: var(--fluid-fs-300);
+
+    & a:hover {
+      color: var(--clr-neutral-800);
+    }
+  }
+}
+
+.secondary-nav {
+  font-size: var(--fluid-fs-400);
+
+  @include breakpoint(medium) {
+    font-size: var(--fluid-fs-200);
+  }
+
+  & a:hover {
+    color: var(--clr-primary-500);
+  }
+}
+
+.author {
+  color: var(--clr-neutral-400);
+  font-size: var(--fluid-fs-300);
+
+  @include breakpoint(medium) {
+    font-size: var(--fluid-fs-200);
+  }
+}

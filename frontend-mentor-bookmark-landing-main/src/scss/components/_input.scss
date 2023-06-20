@@ -1,0 +1,65 @@
+@use "../abstracts/" as *;
+
+.input-container[data-status="wrong-email"] {
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    position: absolute;
+
+    animation: anime-opacity-on 500ms ease-in-out forwards;
+
+    content: url("../assets/svg/icon-error.svg");
+    inset-block-start: 25%;
+    inset-inline-end: 5%;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+
+    display: block;
+    align-items: flex-end;
+
+    border-radius: rem(8);
+
+    color: var(--clr-neutral-100);
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-align: start;
+
+    background-color: var(--clr-primary-500);
+
+    animation: anime-up-to-origin 300ms ease-in-out forwards;
+
+    content: "Whoops, make sure it's an email";
+    padding-block-start: 1.4rem;
+    inline-size: 100%;
+    inset-block-end: -50%;
+    padding-inline-start: 1rem;
+
+    padding-block-end: 0.2rem;
+
+    block-size: rem(40);
+  }
+}
+
+@keyframes anime-up-to-origin {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes anime-opacity-on {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

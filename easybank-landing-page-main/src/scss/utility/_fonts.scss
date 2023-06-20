@@ -1,0 +1,39 @@
+@use "../abstract/" as *;
+@use "sass:string";
+
+/* It's creating a class for each font size. */
+@each $size, $types in $font-sizes {
+  @each $type, $value in $types {
+    @if ($size == "fluid") {
+      .fluid-fs-#{$type} {
+        font-size: $value;
+      }
+    }
+    @if ($size == "classic") {
+      .fs-#{$type} {
+        font-size: $value;
+      }
+    }
+  }
+}
+
+/* It's creating a class for each font weight. */
+@each $fw, $value in $font-weights {
+  .fw-#{$fw} {
+    font-weight: $value;
+  }
+}
+
+/* It's creating a class for each text-align. */
+@each $align in $text-align {
+  .text-align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+/* It's creating a class for each line height. */
+@each $height, $value in $line-heights {
+  .lh-#{$height} {
+    line-height: $value;
+  }
+}

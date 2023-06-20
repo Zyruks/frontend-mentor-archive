@@ -1,0 +1,68 @@
+@use "../abstract" as *;
+
+body {
+  font-weight: 400;
+
+  /* Extend `.$font` in abstract/_fonts.scss */
+  font-family: $primary-font;
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0;
+
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1,
+h2,
+p,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h4 {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* ******************* *\
+ ? #card typography
+\* ******************* */
+.card {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.card__title {
+  font-size: rem(30);
+  text-transform: uppercase;
+}
+
+.card__description {
+  color: var(--very-light-gray);
+  font-size: rem(15);
+  font-family: $secondary-font;
+  line-height: 1.8;
+
+  @include breakpoint(large) {
+    font-size: rem(14);
+    line-height: 1.6;
+  }
+}
+
+.card__btn {
+  font-family: $secondary-font;
+}
+
+/* ******************* *\
+ ? #card typography end
+\* ******************* */

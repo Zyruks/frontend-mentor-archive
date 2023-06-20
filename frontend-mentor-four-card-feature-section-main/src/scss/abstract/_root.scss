@@ -1,0 +1,60 @@
+@use "colors" as *;
+@use "fonts" as *;
+@use "spaces" as *;
+@use "breakpoints" as *;
+
+:root {
+  /* colors */
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+
+  /* font family */
+  @each $font-family, $value in $font-families {
+    --ff-#{$font-family}: #{$value}, serif;
+  }
+
+  /* font sizes */
+  @each $size, $value in $font-sizes {
+    --fs-#{$size}: #{$value};
+  }
+
+  /* font weight */
+  @each $weight, $value in $font-weights {
+    --fw-#{$weight}: #{$value};
+  }
+
+  /* sizes */
+  @each $size, $value in $sizes {
+    --size-#{$size}: #{$value};
+  }
+
+  /* line heights */
+  @each $height, $value in $line-heights {
+    --lh-#{$height}: #{$value};
+  }
+
+  --primary-heading: var(--fs-900);
+  --secondary-heading: var(--fs-800);
+  --third-heading: var(--fs-800);
+  --fifth-heading: var(--fs-400);
+
+  --fs-body: var(--fs-400);
+  --fs-nav: var(--fs-700);
+  --fs-btn: var(--fs-500);
+  @include breakpoint(medium) {
+    --primary-heading: var(--fs-800);
+    --secondary-heading: var(--fs-700);
+    --fifth-heading: var(--fs-300);
+
+    --fs-btn: var(--fs-300);
+    --fs-body: var(--fs-200);
+  }
+  @include breakpoint(large) {
+    --third-heading: var(--fs-600);
+    --fs-nav: var(--fs-200);
+    --fifth-heading: var(--fs-200);
+  }
+}

@@ -1,0 +1,237 @@
+@use "../abstract" as *;
+
+body {
+  font-weight: 400;
+
+  /* Extend `.$font` in abstract/_fonts.scss */
+  font-family: $primary-font;
+}
+
+h1,
+h2,
+h3 {
+  margin-block-start: 0;
+
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1,
+h2,
+p,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h4 {
+  margin-block: 0;
+  margin-inline: 0;
+}
+
+/* ******************* *\
+ ? #component typography
+\* ******************* */
+
+.btn {
+  color: var(--cta-text);
+  font-weight: 600;
+  font-size: rem(20);
+
+  &:hover {
+    color: var(--white);
+  }
+}
+
+.btn--inverted {
+  color: var(--white);
+
+  &:hover {
+    color: var(--cta-text);
+  }
+}
+
+.btn--sign-up {
+  @include breakpoint-down(medium) {
+    color: var(--white);
+
+    &:hover {
+      color: var(--cta-text);
+    }
+  }
+  @include breakpoint(large) {
+    color: var(--cta-text);
+  }
+}
+
+/* ******************* *\
+ ? #component typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #header typography
+\* ******************* */
+.menu__item,
+.login-area a {
+  color: var(--headings);
+  font-weight: 600;
+  font-size: rem(20);
+
+  @include breakpoint(large) {
+    color: var(--white);
+    font-family: $secondary-font;
+
+    opacity: 70%;
+
+    &:hover {
+      text-decoration: underline;
+
+      opacity: 100%;
+    }
+  }
+}
+
+.login-area a {
+  text-align: center;
+
+  transition: opacity 300ms ease-in-out;
+}
+
+.dropdown-menu a {
+  color: var(--headings);
+  font-weight: 600;
+  font-size: rem(16);
+
+  opacity: 80%;
+
+  transition: opacity 300ms ease-in-out;
+
+  &:hover {
+    opacity: 100%;
+  }
+
+  @include breakpoint(large) {
+    color: hsl(0deg, 0%, 0%);
+    font-weight: 300;
+
+    &:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+/* ******************* *\
+ ? #header typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #hero typography 
+\* ******************* */
+.headings-h1 {
+  color: var(--white);
+  font-size: rem(36);
+  text-align: center;
+  @include breakpoint(large) {
+    font-size: rem(48);
+  }
+}
+
+.hero__p {
+  color: var(--white);
+  font-size: rem(18);
+  text-align: center;
+}
+
+/* ******************* *\
+ ? #hero typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #content-info typography 
+\* ******************* */
+
+.headings-h2 {
+  color: var(--headings);
+  font-weight: 600;
+  font-size: rem(28);
+  text-align: center;
+  @include breakpoint(large) {
+    font-size: rem(38);
+  }
+}
+
+.headings-h3 {
+  color: var(--headings);
+  font-weight: 600;
+  font-size: rem(26);
+  text-align: center;
+  @include breakpoint(large) {
+    text-align: start;
+  }
+  @include breakpoint(x-large) {
+    font-size: rem(28);
+    text-align: start;
+  }
+}
+
+.content-info__description {
+  color: var(--body-copy);
+  font-size: rem(16);
+  line-height: 1.6;
+  text-align: center;
+  @include breakpoint(large) {
+    letter-spacing: rem(0.5);
+    text-align: start;
+  }
+  @include breakpoint(x-large) {
+    letter-spacing: rem(1);
+  }
+}
+
+/* ******************* *\
+ ? #content-info typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #infrastructure-section  typography end
+\* ******************* */
+
+.infrastructure-section {
+  & .headings-h2,
+  & .descriptions {
+    color: var(--white);
+  }
+}
+
+/* ******************* *\
+ ? #infrastructure-section  typography end
+\* ******************* */
+
+/* ******************* *\
+ ? #footer typography 
+\* ******************* */
+.headings-h4 {
+  font-weight: 700;
+  font-family: $secondary-font;
+}
+
+.footer-nav li {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer-division {
+  color: var(--white);
+  text-align: center;
+}
+
+/* ******************* *\
+ ? #footer typography end
+\* ******************* */
